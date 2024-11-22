@@ -1,0 +1,29 @@
+//  PAGE CONTENT VARIABLE FILE  //
+
+
+// --- Page Colors ---  //
+$background_dark: #01180e;
+$background_regular: #00190e;
+$background_light: #034524;
+$text_regular: #2c6639;
+$card_dark: #000c06;
+$card_light: #011d10;
+$button_dark: #01c164;
+$button_light: #32c07c;
+$icon_regular: #29a66a;
+// ---(END) Page Colors ---  //
+
+
+// --- Inherited Templates --- //
+%centered_content {
+    margin: 2em auto;
+    padding: 5% 5%;
+}
+// ---  (END) Inherited Specifications  --- //
+
+
+// --- Testing Outline Specs --- //
+$testline1: 4px dashed red;
+$testline2: 4px dashed aqua;
+$testline3: 4px dashed yellowgreen;
+// ---  (END) Testing Outline Specs  --- //
