@@ -1,0 +1,25 @@
+//  MAIN SCSS STYLE FILE  //
+
+
+
+// Importing main variables for App.css //
+@import '_variables.scss';
+
+body {
+    font-size: 62.5%;
+    display: inline;
+    margin: 0 auto;
+    padding: 0 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    box-sizing: border-box;
+}
+
+
+.page_container {
+    width: 96vw;
+    padding: 2vw;
+    height: fit-content;
+    background-image: linear-gradient(to top, $background_dark, $background_light);
+    outline: $testline1;
+}
