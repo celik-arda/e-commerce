@@ -1,0 +1,39 @@
+
+.header_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .site_name {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5em;
+
+        span {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+    
+    .nav_container {
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 2em;
+            color: white;
+        }
+    }
+}
