@@ -1,39 +1,101 @@
+@import '../../variables';
 
 .header_container {
     display: flex;
     flex-direction: column;
-}
-
-.header_menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .site_name {
+    
+    .header_menu {
         display: flex;
         justify-content: space-between;
-        gap: 1.5em;
-
-        span {
-            display: flex;
-            align-items: center;
-        }
-
-    }
-    
-    .nav_container {
-
-        .navbar {
+        align-items: center;
+        
+        .site_name {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            gap: 1em;
+            gap: 1.5em;
+            
+            span {
+                display: flex;
+                align-items: center;
+            }
+            
+        }
+        
+        .nav_container {
+            
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1em;
+            }
+            
+            a {
+                display: inline-block;
+                font-size: 2em;
+                color: white;
+            }
+        }
+    }
+    
+    
+}
+
+
+.hero_section {
+    @extend %centered_flex;
+
+    width: fit-content;
+    margin: 4rem auto;
+    padding: 3.5em;
+    max-height: 500px;
+    background-color: black;
+    border-radius: 3em;
+    
+    .hero_left_side {
+        flex: 1;
+        padding: 2.3rem;
+        display: grid;
+        grid-template-rows: 9fr 11fr 3fr;
+        font-size: 1.3rem;
+
+        h2 {
+            display: inline-block;
+            font-size: 2.4rem;
+            width: 96%;
+            text-align: left;
         }
 
-        a {
+        p {
             display: inline-block;
-            font-size: 2em;
-            color: white;
+            font-size: 1.2rem;
+            width: 78%;
+            text-align: left;
         }
+
+        .hero_buttons {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+    .hero_right_side {
+        flex: 1;
+        padding: 2.8rem;
+        // box-sizing: border-box;
+        
+        .hero_img_container {
+            width: 88%;
+            margin: auto auto;
+            // overflow: hidden;
+            border-radius: 2rem;
+
+
+            .hero_image {
+                max-width: 98%;
+                background-size: cover;
+                border-radius: 3rem;
+            }
+        }
+        
     }
 }

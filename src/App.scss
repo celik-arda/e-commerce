@@ -21,10 +21,8 @@ body {
     padding: 2vw;
     height: fit-content;
     background-image: linear-gradient(to top, $background_dark, $background_light);
-    outline: $testline1;
 
-    .button_dark {
+    button {
         @extend %button_dark;
-        
     }
 }

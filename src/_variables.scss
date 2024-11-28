@@ -14,6 +14,7 @@ $icon_regular: #29a66a;
 // --- (END) Page Colors ---  //
 
 
+
 // --- Inherited Templates --- //
 %centered_content {
     margin: 2em auto;
@@ -29,6 +30,14 @@ $icon_regular: #29a66a;
     border: 0.1em solid $button_dark;
     color: $button_dark;
     border-radius: 1.6em;
+}
+
+%centered_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 500px;
 }
 // --- (END) Inherited Specifications  --- //
 
