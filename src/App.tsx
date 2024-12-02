@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // ---  Components  ---  //
 import Header from './components/header/Header.tsx';
+import NumberSection from './components/numbersSection/NumbersSection.tsx';
 import Categories from './components/categories/Categories.tsx';
 import Basket from './components/basket/Basket.tsx';
 import Signin from './components/signin/Signin.tsx';
@@ -34,7 +35,7 @@ function App() {
 
             
                 <section>
-
+                    <NumberSection />
                 </section>
             
 
