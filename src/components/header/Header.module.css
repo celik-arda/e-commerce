@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1000px;
-  height: 500px;
 }
 
 .header_container {
@@ -39,9 +37,9 @@
 .hero_section {
   width: -moz-fit-content;
   width: fit-content;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 3.5em;
-  max-height: 500px;
+  max-height: 450px;
   background-color: black;
   border-radius: 3em;
 }

@@ -1,4 +1,4 @@
-.page_container .button_dark {
+.page_container button {
   background-color: transparent;
   text-align: center;
   color: white;
@@ -20,10 +20,9 @@ body {
 }
 
 .page_container {
-  width: 96vw;
-  padding: 2vw;
+  width: 88vw;
+  padding: 2vw 6vw;
   height: -moz-fit-content;
   height: fit-content;
   background-image: linear-gradient(to top, #01180e, #034524);
-  outline: 4px dashed red;
 }/*# sourceMappingURL=App.css.map */
