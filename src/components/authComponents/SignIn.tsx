@@ -1,6 +1,6 @@
-// Firebase Auth and SignIn Hook Import //
-import { auth } from '../../../firebase.tsx';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+// // Firebase Auth and SignIn Hook Import //
+// import { auth } from '../../../firebase.tsx';
+// import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
 const SignIn = () => {
