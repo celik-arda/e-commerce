@@ -1,8 +1,13 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
 
-// // ---  Components  ---  //
-import HomePage from './layouts/HomePage.tsx'
+//  ---  Page Layout Navbar  --- //
+import Navbar from './layouts/navbar/Navbar.tsx'
+//  ---  (END)  Page Layout Navbar  --- //
+
+
+// ---  Components  ---  //
+import HomePage from './components/homePage/HomePage.tsx'
 import Categories from './components/categories/Categories.tsx';
 import Basket from './components/basket/Basket.tsx';
 import SignIn from './components/authComponents/SignIn.tsx'
@@ -17,6 +22,10 @@ function App() {
 
         <>
             <div className="page_container">
+
+                {/* --- Page Layout as Navbar --- */}
+                <Navbar />
+                {/* --- (END) Page Layout as Navbar --- */}
                 
                 {/* --- Navbar Link Routes ---*/}
                 <Routes>
