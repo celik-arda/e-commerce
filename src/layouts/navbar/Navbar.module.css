@@ -1,0 +1,25 @@
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_menu .site_name {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+.header_menu .site_name span {
+  display: flex;
+  align-items: center;
+}
+.header_menu .nav_container .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+.header_menu .nav_container a {
+  display: inline-block;
+  font-size: 2em;
+  color: white;
+}/*# sourceMappingURL=Navbar.module.css.map */
