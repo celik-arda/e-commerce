@@ -10,9 +10,9 @@ import Navbar from './layouts/navbar/Navbar.tsx'
 import HomePage from './components/homePage/HomePage.tsx'
 import Categories from './components/categories/Categories.tsx';
 import Basket from './components/basket/Basket.tsx';
-import SignIn from './components/authComponents/SignIn.tsx'
-import SignUp from './components/authComponents/SignUp.tsx'
-import SignOut from './components/authComponents/SignOut.tsx';
+import SignIn from './components/authComponents/signIn/SignIn.tsx'
+import SignUp from './components/authComponents/signUp/SignUp.tsx'
+import SignOut from './components/authComponents/signOut/SignOut.tsx';
 // ---  (END)  Components  ---  //
 
 

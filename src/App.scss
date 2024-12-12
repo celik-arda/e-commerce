@@ -26,3 +26,9 @@ body {
         @extend %button_dark;
     }
 }
+
+form {
+    input {
+        font-size: 1.5rem;
+    }
+}

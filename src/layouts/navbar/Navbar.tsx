@@ -1,6 +1,7 @@
 import '../../App.css'
 import style from './navbar.module.css'
 import { NavLink } from 'react-router-dom'
+import AuthButtonContainer from '../authButtonsContainer/AuthButtonContainer';
 
 const Navbar = () => {
     return (
@@ -15,9 +16,7 @@ const Navbar = () => {
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/categories'>Categories</NavLink>
                         <NavLink to='/basket'></NavLink>
-                        <NavLink to='/signin'>
-                            <button className='button_dark' type='submit'>Signin</button>
-                        </NavLink>
+                        <AuthButtonContainer />
                         <NavLink to='/signup'>
                             <button className='button_dark' type='submit'>SignUp</button>
                         </NavLink>

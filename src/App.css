@@ -25,4 +25,7 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   background-image: linear-gradient(to top, #01180e, #034524);
+}
+form input {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=App.css.map */
