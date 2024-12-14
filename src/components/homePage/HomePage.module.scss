@@ -3,7 +3,7 @@
 
 
 // Importing main variables for App.css //
-@import '_variables.scss';
+@import '../_variables.scss';
 
 body {
     font-size: 62.5%;
@@ -24,11 +24,5 @@ body {
 
     button {
         @extend %button_dark;
-    }
-}
-
-form {
-    input {
-        font-size: 1.5rem;
     }
 }

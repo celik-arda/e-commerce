@@ -1,0 +1,31 @@
+.numbers_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numbers_container {
+  width: 100%;
+  margin: 2rem auto;
+  -moz-column-gap: 3em;
+       column-gap: 3em;
+}
+.numbers_container .numbers_card {
+  width: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 6fr 6fr;
+  text-align: center;
+  padding: 3.8em;
+  flex-grow: 1;
+  flex: 1;
+  border-radius: 3em;
+}
+.numbers_container .numbers_card .number {
+  font-size: 3.5em;
+  font-weight: 600;
+}
+.numbers_container .numbers_card .number_text {
+  font-size: 2.5em;
+  color: #2c6639;
+}/*# sourceMappingURL=NumbersSection.module.css.map */
