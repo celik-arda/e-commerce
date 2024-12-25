@@ -1,11 +1,15 @@
 // ---  Components  ---  //
 import Header from '../header/Header.tsx';
 import NumberSection from '../numbersSection/NumbersSection.tsx';
+import ProductSection from '../productSection/ProductSection.tsx';
 // ---  (END)  Components  ---  //
 
 
 
 const HomePage = () => {
+
+    
+
     return (
         <>
 
@@ -21,7 +25,7 @@ const HomePage = () => {
 
         
             <section>
-
+                <ProductSection />
             </section>
         
 
