@@ -6,8 +6,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 // Firebase Auth and SignIn Hook Import //
 import { auth } from '../../../../firebase.tsx';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import HomePage from '../../homePage/HomePage.tsx';
-// import { useAuthState } from 'react-firebase-hooks/auth';
+
 
 
 const SignIn = () => {
@@ -16,16 +15,9 @@ const SignIn = () => {
     const [password, setPassword] = useState("");
     const [redirect, setRedirect] = useState(false);
 
-    // check the profile's authorization state //
-    // const  [user, isLogging] = useAuthState(auth);
-
-
-
 
     const handleLoginForm = async (e: any) => {
 
-
-        
         console.log("giriş bilgileri : ",email, " / ", password);
         e.preventDefault();
         
@@ -38,8 +30,6 @@ const SignIn = () => {
         })
         .then(result => {
             console.log("GİRİŞ BAŞARILI  +++ ", result);
-            // setEmail("");
-            // setPassword("");
         })
         .catch(error => {
             const errorInfo = error.message;
