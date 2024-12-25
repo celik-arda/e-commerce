@@ -4,12 +4,10 @@
     width: 88vw;
     margin: 4rem auto;
     max-height: fit-content;
-    outline: $testline2;
     display: flex;
     justify-content: center;
     
     .product_list {
-        outline: $testline3;
         display: grid;
         grid-template-columns: 4fr 4fr 4fr 4fr;
         gap: 5rem;
@@ -18,12 +16,12 @@
         
         .product_item {
             outline: $testline1;
-            background-image: linear-gradient(20deg, #000c06 100px, #011d10 250px, #000c06 400px);
+            background-color: black;
+            // background-image: linear-gradient(20deg, #000c06 100px, #011d10 250px, #000c06 400px);
             padding: 1rem;
             display: grid;
             grid-template-rows: 2fr 1fr 1fr 1fr;
             place-items: center;
-            // gap: 0.7rem;
             height: 360px;
             overflow: hidden;
             border-radius: 2em;
@@ -39,6 +37,7 @@
                 line-height: 1.7rem;
                 font-size: 0.8rem;
             }
+
 
             .thumbnail_container {
                 display: flex;

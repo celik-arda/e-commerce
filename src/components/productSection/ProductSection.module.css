@@ -21,12 +21,10 @@
   margin: 4rem auto;
   max-height: -moz-fit-content;
   max-height: fit-content;
-  outline: 4px dashed aqua;
   display: flex;
   justify-content: center;
 }
 .product_section .product_list {
-  outline: 4px dashed yellowgreen;
   display: grid;
   grid-template-columns: 4fr 4fr 4fr 4fr;
   gap: 5rem;
@@ -34,7 +32,7 @@
 }
 .product_section .product_list .product_item {
   outline: 4px dashed red;
-  background-image: linear-gradient(20deg, #000c06 100px, #011d10 250px, #000c06 400px);
+  background-color: black;
   padding: 1rem;
   display: grid;
   grid-template-rows: 2fr 1fr 1fr 1fr;
