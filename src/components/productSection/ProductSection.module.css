@@ -31,7 +31,6 @@
   padding-inline: 0;
 }
 .product_section .product_list .product_item {
-  outline: 4px dashed red;
   background-color: black;
   padding: 1rem;
   display: grid;
