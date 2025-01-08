@@ -2,13 +2,13 @@
 import Header from '../header/Header.tsx';
 import NumberSection from '../numbersSection/NumbersSection.tsx';
 import ProductSection from '../productSection/ProductSection.tsx';
+import SearchAndFilterInputs from '../searchFilterBar/SearchAndFilterInputs.tsx';
 // ---  (END)  Components  ---  //
 
 
 
 const HomePage = () => {
 
-    
 
     return (
         <>
@@ -22,7 +22,9 @@ const HomePage = () => {
                 <NumberSection />
             </section>
         
-
+            <section>
+                <SearchAndFilterInputs />
+            </section>
         
             <section>
                 <ProductSection />
