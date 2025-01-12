@@ -2,6 +2,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -33,3 +34,4 @@ const app = initializeApp(firebaseConfig);
 
 // create auth variable to use firebase auth hooks //
 export const auth = getAuth(app);
+export const db = getFirestore(app);

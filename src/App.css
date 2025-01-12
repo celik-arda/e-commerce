@@ -8,6 +8,13 @@
   color: #01c164;
   border-radius: 1.6em;
 }
+.page_container button:hover {
+  transition-property: color, background-color;
+  transition-duration: 350ms;
+  transition-timing-function: ease-out;
+  color: white;
+  background-color: #01c164;
+}
 
 body {
   font-size: 62.5%;
@@ -20,11 +27,11 @@ body {
 }
 
 .page_container {
+  background: repeating-linear-gradient(20deg, #01180e 600px, #034524 900px, #01180e 1550px);
   width: 88vw;
   padding: 2vw 6vw;
   height: -moz-fit-content;
   height: fit-content;
-  background-image: linear-gradient(to top, #01180e, #034524);
 }
 form input {
   font-size: 1.5rem;

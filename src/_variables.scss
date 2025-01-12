@@ -16,6 +16,10 @@ $icon_regular: #29a66a;
 
 
 // --- Inherited Templates --- //
+%page_background {
+    background-image: linear-gradient(to top, $background_dark, $background_light);;
+}
+
 %centered_content {
     margin: 2em auto;
     padding: 5% 5%;
@@ -30,7 +34,16 @@ $icon_regular: #29a66a;
     border: 0.1em solid $button_dark;
     color: $button_dark;
     border-radius: 1.6em;
+
+    &:hover {
+        transition-property: color, background-color;
+        transition-duration: 350ms;
+        transition-timing-function: ease-out;
+        color: white;
+        background-color: $button_dark;
+    }
 }
+
 
 %centered_flex {
     display: flex;

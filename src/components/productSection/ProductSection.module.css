@@ -1,0 +1,59 @@
+.product_section .product_list .product_item button {
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  padding: 0.3em 1em;
+  border: 0.1em solid #01c164;
+  color: #01c164;
+  border-radius: 1.6em;
+}
+.product_section .product_list .product_item button:hover {
+  transition-property: color, background-color;
+  transition-duration: 350ms;
+  transition-timing-function: ease-out;
+  color: white;
+  background-color: #01c164;
+}
+
+.product_section {
+  width: 88vw;
+  margin: 4rem auto;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+.product_section .product_list {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr 4fr;
+  gap: 5rem;
+  padding-inline: 0;
+}
+.product_section .product_list .product_item {
+  background-color: black;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  place-items: center;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 2em;
+}
+.product_section .product_list .product_item h3 {
+  color: #01c164;
+  font-size: 1.7em;
+  padding: 0px;
+}
+.product_section .product_list .product_item button {
+  line-height: 1.7rem;
+  font-size: 0.8rem;
+}
+.product_section .product_list .product_item .thumbnail_container {
+  display: flex;
+  justify-content: center;
+}
+.product_section .product_list .product_item .thumbnail_container .product_thumbnail {
+  width: 80%;
+  background-color: transparent;
+}/*# sourceMappingURL=ProductSection.module.css.map */
