@@ -1,59 +1,88 @@
-import { useState, useContext, useEffect} from 'react';
-import style from './SearchAndFilterInputs.module.css'
-import MyAllContext from '../../contextProviders/MyContextProvider';
-import SearchResults from '../../components/searchFilterBarResults/SearchResults'
-import { searchTheProducts } from '../../utils/helpers/search-products'
-import {collection} from 'firebase/firestore'
-import {db} from '../../../firebase'
+    import { useState, useContext, useEffect, useRef} from 'react';
+    import style from './SearchAndFilterInputs.module.css'
+    import MyAllContext from '../../contextProviders/MyContextProvider';
+    import SearchResults from '../../components/searchFilterBarResults/SearchResults'
 
-const SearchAndFilterInputs = () => {
+    //  Inheritance-Based Objects //
+    import { Product } from '../../models/Product'
+
+    // Utils Functions //
+    import { searchTheProducts } from '../../utils/helpers/search-products'
+    // (END) Utils Functions //
+
+    //  Firebase Variables And Hooks //
+    import {collection} from 'firebase/firestore'
+    import {db} from '../../../firebase'
+    //  (END) Firebase Variables And Hooks //
 
 
-    let contextVariables = useContext(MyAllContext);
+    const SearchAndFilterInputs = () => {
+        
+        // select collection named products in firestore //
+        const productsRef = collection(db, "products");
 
-    if(!contextVariables){
-        console.log("context yükleniyor...")
-        return <div>loading context...</div>
-    }
+        let contextVariables = useContext(MyAllContext);
+        
+        if(!contextVariables){
+            console.log("context yükleniyor...")
+            return <div>loading context...</div>
+        }
+        
+        const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts, listResult, setListResult} = contextVariables;
+        
+        // useEffect(() => {
+        //     // if (searchBarValue !== ""){
+        //     //     setSearchResultVisible(true);
+        //     // }
+        //     // else{
+        //     //     setSearchResultVisible(false);
+        //     // }
+            
+        // },[searchBarValue])
+
+        // let toggleResultBox = useRef<HTMLDivElement>(null);
+
+
+        useEffect(() => {
+            console.log("state tetiklendi")
     
-    const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts} = contextVariables;
+            if(searchBarValue !== ""){
+    
+                setSearchResultVisible(true);
+                searchTheProducts(searchBarValue, setListResult, productsRef);
+                console.log("kutu dolu ve arama çalıştı, setVisible çalıştı");
 
-    useEffect(() => {
-        if (searchBarValue !== ""){
-            setSearchResultVisible(true);
-        }
-        else{
-            setSearchResultVisible(false);
-        }
 
-    },[searchBarValue])
+            }
+    
+    
+            console.log("visible son durum: ",searchResultVisible)
+    
+        },[searchBarValue]);
+        
 
-    return (
-        // <>
-        <div className={style.search_filter_container}>
-            <div className={style.search_area}>
-                <form className={style.search_form}>
-                    <input value={searchBarValue} onChange={e => setSearchBarValue(e.target.value)} placeholder='search product'/>
-                </form>
-                <div className={`${ searchResultVisible ? style.search_result_visible : style.search_result_invisible}`}>
-                    {
-                        searchResultVisible
-                        ?
-                        (<SearchResults />)
-                        :
-                        (<span></span>)
-                    }
+
+        return (
+
+            <div className={style.search_filter_container}>
+                <div className={style.search_area}>
+                    <form className={style.search_form}>
+                        <input value={searchBarValue} onChange={e => setSearchBarValue(e.target.value)} placeholder='search product'/>
+                    </form>
+
+                    {searchResultVisible && <SearchResults />}
+
+
                 </div>
-            </div>
-            <div className={style.filter_area}>
-                <form>
-                    <input placeholder='filter product' />
-                </form>
+                <div className={style.filter_area}>
+                    <form>
+                        <input placeholder='filter product' />
+                    </form>
+                </div>
+
             </div>
 
-        </div>
-        // </>
-    )
-}
+        )
+    }
 
-export default SearchAndFilterInputs
+    export default SearchAndFilterInputs

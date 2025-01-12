@@ -49,7 +49,7 @@ export const searchTheProducts = (
         // })
         getDocs(searchingQuery)
         .then(querySnapshot => {
-            console.log("QUERY'DEN DÖNEN SONUÇ : ", querySnapshot.docs)
+            // console.log("QUERY'DEN DÖNEN SONUÇ : ", querySnapshot.docs)
             let foundProducts: AllProducts[] = querySnapshot.docs.map((item) => {
                 
                 let eachProduct = item.data() as AllProducts; 
@@ -64,12 +64,12 @@ export const searchTheProducts = (
                     eachProduct.availabilityStatus,
                 )
             })
-            console.log("QUERY'DEN DÖNENLERİN TOPLAMI : ",foundProducts)
+            // console.log("QUERY'DEN DÖNENLERİN TOPLAMI : ",foundProducts)
             return foundProducts;
         })
         .then(allSearchResult => {
             setListResult(allSearchResult);
-            console.log(">>> allSearchResult : ",allSearchResult);
+            // console.log(">>> allSearchResult : ",allSearchResult);
         })
     } catch{ (error: FirestoreError) => {
             if (error){
@@ -80,7 +80,7 @@ export const searchTheProducts = (
             }
         }
     }
-    console.log("SEARCH FUNC() ÇALIŞTI VE BİTİP DÖNDÜRDÜ : ",productsResult);
+    // console.log("SEARCH FUNC() ÇALIŞTI VE BİTİP DÖNDÜRDÜ : ",productsResult);
     return productsResult;
 }
 

@@ -33,24 +33,24 @@
             
         }
         // .search_result_invisible{
-        //     top: 12rem;
+        //     display: none;       
         //     position: absolute;
-        //     display: block;       
-        //     outline: 3px dashed white;    
-        //     background-color:grey;
+        //     // top: 12rem;
+        //     outline: 7px dashed white;    
+        //     background-color:white;
         // }
-        .search_result_visible {
-            display: block;
-            top: 160%;
-            left: 0;
-            position: absolute;
-            width: 41rem;
-            height: fit-content;
-            padding: 4rem 0;
-            z-index: 99;
-            outline: 3px solid red;
-            background-color: #2b2a33;
-        }
+        // .search_result_visible {
+        //     display: block;
+        //     position: absolute;
+        //     top: 160%;
+        //     left: 0;
+        //     width: 41rem;
+        //     height: fit-content;
+        //     padding: 1rem 1rem;
+        //     z-index: 2;
+        //     border-radius: 1rem;
+        //     background-color: #2b2a33;
+        // }
     }
 
 }

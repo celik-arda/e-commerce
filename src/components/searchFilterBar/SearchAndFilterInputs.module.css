@@ -23,17 +23,4 @@
   width: fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
-}
-.search_filter_container .search_area .search_result_visible {
-  display: block;
-  top: 160%;
-  left: 0;
-  position: absolute;
-  width: 41rem;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 4rem 0;
-  z-index: 99;
-  outline: 3px solid red;
-  background-color: #2b2a33;
 }/*# sourceMappingURL=SearchAndFilterInputs.module.css.map */
