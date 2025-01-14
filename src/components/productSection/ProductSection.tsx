@@ -39,43 +39,9 @@ const ProductSection = () => {
         images: any[];
         thumbnail: string;
     }
-    // class Product implements AllProducts {
-
-    //     category: string
-    //     availabilityStatus: string;
-    //     title: string;
-    //     id: number;
-    //     price: number;
-    //     description: string;
-    //     images: any[];
-    //     thumbnail: string;
-
-    //     constructor (
-    //         id:number,
-    //         title:string,
-    //         category:string,
-    //         price: number,
-    //         description:string,
-    //         images:any[],
-    //         thumbnail: string,
-    //         availabilityStatus:string
-
-    //     ) {
-    //         this.id = id;
-    //         this.title = title;
-    //         this.category = category;
-    //         this.price = price;
-    //         this.description = description;
-    //         this.images = images;
-    //         this.thumbnail = thumbnail;
-    //         this.availabilityStatus = availabilityStatus;
-    //     }
-    // }
-    // const [allProducts, setAllProducts] = useState<AllProducts[]>([]);
-
+    
     const contextVariables = useContext(MyAllContext)
 
-    // const [allProducts, setAllProducts] = useState<AllProducts[]>([]);
     if (!contextVariables) {
         console.log("productSection contexti yükkleniyor...")
         return <div>productsection load...</div>;
@@ -83,7 +49,6 @@ const ProductSection = () => {
     
     const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts, listResult, setListResult} = contextVariables;
     
-    console.log("en başta allProducts",allProducts)
 
     
     
@@ -99,6 +64,7 @@ const ProductSection = () => {
                 let fetchedProducts: AllProducts[] = querySnapshot.docs.map((e) => {
                     
                     let eachProduct = e.data() as AllProducts; 
+                    // create inherited Product object //
                     return new Product(
                         eachProduct.id,
                         eachProduct.title,
