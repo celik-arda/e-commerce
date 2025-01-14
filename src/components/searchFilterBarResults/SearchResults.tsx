@@ -29,14 +29,8 @@ const SearchResults = () => {
     // pick the result-box as a useRef Element //
     let toggleResultBox = useRef<HTMLUListElement>(null);
     
+    // add click event with useRef to make result-toggle-off //
     useEffect(() => {
-        console.log("state tetiklendi")
-
-
-
-
-        console.log("visible son durum: ",searchResultVisible)
-
             
             if (searchBarValue !== ""){
         
@@ -45,17 +39,15 @@ const SearchResults = () => {
                     // First, check type of "e.target" for TS //
                     // contains() method needs exact type in TS
                     if (e.target instanceof Node) {
-                        console.log("toggleresult.current: ",toggleResultBox.current);
-                        console.log("e.target: ",toggleResultBox.current);
                         
                         // if clicked outside of box, toggle off //
                         if (toggleResultBox.current &&  !toggleResultBox.current.contains(e.target)) {
                             setSearchResultVisible(false);
-                            console.log("dışarı tıklandı")
+                            console.log("(result.tsx)  dışarı tıklandı")
                         }
                         else {
                             setSearchResultVisible(true);
-                            console.log("içeri tıklandı")
+                            console.log("(result.tsx)  içeri tıklandı")
                         }
                     }
                 }

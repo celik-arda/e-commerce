@@ -42,21 +42,21 @@
 
         // let toggleResultBox = useRef<HTMLDivElement>(null);
 
-
+        // open result-toggle-box //
         useEffect(() => {
-            console.log("state tetiklendi")
+            console.log("(inputsection)  state tetiklendi")
     
             if(searchBarValue !== ""){
     
                 setSearchResultVisible(true);
                 searchTheProducts(searchBarValue, setListResult, productsRef);
-                console.log("kutu dolu ve arama çalıştı, setVisible çalıştı");
+                console.log("(inputSection)  kutu dolu ve arama çalıştı, setVisible çalıştı");
 
 
             }
     
     
-            console.log("visible son durum: ",searchResultVisible)
+            console.log("(inputsection)  visible son durum: ",searchResultVisible)
     
         },[searchBarValue]);
         
