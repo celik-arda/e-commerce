@@ -29,11 +29,12 @@ $icon_regular: #29a66a;
     background-color: transparent;
     text-align: center;
     color: white;
-    font-size: 1em;
-    padding: 0.3em 1em;
-    border: 0.1em solid $button_dark;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.4rem;
+    border: 0.2em solid $button_dark;
     color: $button_dark;
-    border-radius: 1.6em;
+    border-radius: 2.2rem;
 
     &:hover {
         transition-property: color, background-color;
