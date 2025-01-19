@@ -1,3 +1,5 @@
+import {Auth, User} from 'firebase/auth'
+
 export interface AllProducts {
     category: string
     availabilityStatus: string;
@@ -7,6 +9,24 @@ export interface AllProducts {
     description: string;
     images: any[];
     thumbnail: string;
+}
+
+
+
+export interface MyContextType {
+    auth: Auth,
+    user: User | null | undefined;
+    isLogging: boolean | undefined;
+    loadingState: boolean;
+    setLoadingState: (newValue: boolean) => void;
+    searchBarValue: string;
+    setSearchBarValue: (value: string) => void;
+    searchResultVisible: boolean;
+    setSearchResultVisible: (value: boolean) => void;
+    allProducts: AllProducts[],
+    setAllProducts: (newValue: AllProducts[]) => void,
+    listResult: AllProducts[],
+    setListResult: (newValue: AllProducts[]) => void,
 }
 
 
