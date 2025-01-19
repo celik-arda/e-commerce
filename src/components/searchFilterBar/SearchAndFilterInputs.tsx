@@ -30,34 +30,13 @@
         
         const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts, listResult, setListResult} = contextVariables;
         
-        // useEffect(() => {
-        //     // if (searchBarValue !== ""){
-        //     //     setSearchResultVisible(true);
-        //     // }
-        //     // else{
-        //     //     setSearchResultVisible(false);
-        //     // }
-            
-        // },[searchBarValue])
-
-        // let toggleResultBox = useRef<HTMLDivElement>(null);
-
-        // open result-toggle-box //
         useEffect(() => {
-            console.log("(inputsection)  state tetiklendi")
-    
+        
             if(searchBarValue !== ""){
-    
                 setSearchResultVisible(true);
                 searchTheProducts(searchBarValue, setListResult, productsRef);
-                console.log("(inputSection)  kutu dolu ve arama çalıştı, setVisible çalıştı");
-
-
             }
-    
-    
-            console.log("(inputsection)  visible son durum: ",searchResultVisible)
-    
+        
         },[searchBarValue]);
         
 

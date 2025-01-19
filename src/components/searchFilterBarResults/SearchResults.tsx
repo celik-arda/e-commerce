@@ -43,11 +43,9 @@ const SearchResults = () => {
                         // if clicked outside of box, toggle off //
                         if (toggleResultBox.current &&  !toggleResultBox.current.contains(e.target)) {
                             setSearchResultVisible(false);
-                            console.log("(result.tsx)  dışarı tıklandı")
                         }
                         else {
                             setSearchResultVisible(true);
-                            console.log("(result.tsx)  içeri tıklandı")
                         }
                     }
                 }
@@ -61,7 +59,6 @@ const SearchResults = () => {
             }
             else {
                     setSearchResultVisible(false);
-                    console.log("hareket var ama kutu boş")
                 }
                 
     },[searchBarValue]);
