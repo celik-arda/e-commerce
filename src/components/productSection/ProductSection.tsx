@@ -1,10 +1,12 @@
 import style from './ProductSection.module.css'
 import { useState, useEffect, useContext } from 'react';
+import { NavLink } from 'react-router-dom'
 import MyAllContext from '../../contextProviders/MyContextProvider.tsx'
 import { collection, getDocs } from 'firebase/firestore';
 import { Auth, User } from 'firebase/auth';
 import { db } from '../../../firebase.tsx';
 import { Product } from '../../models/Product.tsx'
+import EachProductDetail from '../eachProductDetail/EachProductDetail.tsx';
 
 
 
@@ -43,7 +45,6 @@ const ProductSection = () => {
     const contextVariables = useContext(MyAllContext)
 
     if (!contextVariables) {
-        console.log("productSection contexti yükkleniyor...")
         return <div>productsection load...</div>;
     }
     
@@ -102,9 +103,10 @@ const ProductSection = () => {
         <div className={style.product_section}>
 
             <ul className={style.product_list}>
-                {/* <h2>{allProducts}</h2> */}
-                {allProducts.map((item, index) => (
-                    <li key={index} className={style.product_item}>
+                {
+                allProducts.map((item, index) => (
+                    <NavLink key={index} to={`/product/${item.id}`}>
+                    <li className={style.product_item}>
                         <div className={style.thumbnail_container}>
                             <img className={style.product_thumbnail} src={item.thumbnail} alt='product_photo' />
                         </div>
@@ -118,7 +120,9 @@ const ProductSection = () => {
                             <button>Add To Basket</button>
                         </div>
                     </li>
-                ))}
+                    </NavLink>
+                ))
+                }
             </ul>
 
         </div>
