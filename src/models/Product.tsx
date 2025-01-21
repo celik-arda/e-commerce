@@ -27,6 +27,8 @@ export interface MyContextType {
     setAllProducts: (newValue: AllProducts[]) => void,
     listResult: AllProducts[],
     setListResult: (newValue: AllProducts[]) => void,
+    userLoginState: boolean,
+    setUserLoginState: (newValue:  boolean) => void
 }
 
 

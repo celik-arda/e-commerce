@@ -29,6 +29,9 @@ interface MyContextType {
     setAllProducts: (newValue: AllProducts[]) => void,
     listResult: AllProducts[],
     setListResult: (newValue: AllProducts[]) => void,
+    userLoginState: boolean,
+    setUserLoginState: (newValue: boolean) => void,
+
 }
 
 
@@ -42,6 +45,7 @@ export const MyContextProvider = ({children}: {children: ReactNode}) => {
     const [allProducts, setAllProducts] = useState<AllProducts[]>([]);
     const [listResult, setListResult] = useState<AllProducts[]>([]);
     const [searchResultVisible, setSearchResultVisible] = useState<boolean>(false);
+    const [userLoginState, setUserLoginState] = useState<boolean>(false);
     
     const myContext : MyContextType = {
 
@@ -58,6 +62,8 @@ export const MyContextProvider = ({children}: {children: ReactNode}) => {
         setAllProducts,
         listResult,
         setListResult,
+        userLoginState,
+        setUserLoginState,
     }
     
     return (
