@@ -55,14 +55,14 @@ const EachProductDetail = () => {
                 <img src={selectedProduct.images[0]} className={style.detail_img}/>
             </div>
             <div className={style.detail_info_container}>
-                <div className={style.title_area}>
+                <h2 className={style.title_area}>
                     {selectedProduct.title}
-                </div>
+                </h2>
                 <div className={style.description_area}>
                     {selectedProduct.description}
                 </div>
                 <div className={style.price_and_buttons}>
-                    <h3>{selectedProduct.price}<span>€</span></h3>
+                    <h3>{selectedProduct.price}<span> €</span></h3>
                     <button>Add To Basket</button>
                 </div>
             </div>
