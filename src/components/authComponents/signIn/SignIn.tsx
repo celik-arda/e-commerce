@@ -1,9 +1,7 @@
 //  --- React Hooks ---
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import style from './SignIn.module.css';
 import { Navigate, Route, Routes } from 'react-router-dom';
-
-import MyAllContext from '../../../contextProviders/MyContextProvider.tsx';
 
 // Firebase Auth and SignIn Hook Import //
 import { auth } from '../../../../firebase.tsx';
@@ -15,15 +13,8 @@ const SignIn = () => {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [redirect, setRedirect] = useState(false);
 
-
-    
-    const contextVariables = useContext(MyAllContext);
-    
-    if (!contextVariables) {
-        return <h1>context undefined</h1>
-    }
-    const {userLoginState, setUserLoginState} = contextVariables;
 
     const handleLoginForm = async (e: any) => {
 
@@ -33,7 +24,7 @@ const SignIn = () => {
         await signInWithEmailAndPassword(auth, email, password)
         .then(credentials => {
             const loginResponse = credentials.user;
-            setUserLoginState(true);
+            setRedirect(true);
             console.log("--Response : ",loginResponse)
             return loginResponse;
         })
@@ -42,7 +33,6 @@ const SignIn = () => {
         })
         .catch(error => {
             const errorInfo = error.message;
-            setUserLoginState(false);
             console.log("signin kompponentinin catch kısmı çalıştı, giriş başarısız !!!")
             console.log(errorInfo);
         })
@@ -50,11 +40,7 @@ const SignIn = () => {
 
     } 
 
-
-    if (userLoginState) {
-        // login process is successful //
-        // redirect user to homepage //
-
+    if (redirect) {
         return <Navigate to='/' replace />
     }
     else {
