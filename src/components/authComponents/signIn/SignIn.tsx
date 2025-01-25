@@ -18,23 +18,22 @@ const SignIn = () => {
 
     const handleLoginForm = async (e: any) => {
 
-        console.log("giriş bilgileri : ",email, " / ", password);
+
         e.preventDefault();
         
         await signInWithEmailAndPassword(auth, email, password)
         .then(credentials => {
             const loginResponse = credentials.user;
             setRedirect(true);
-            console.log("--Response : ",loginResponse)
+            
             return loginResponse;
         })
         .then(result => {
             console.log("GİRİŞ BAŞARILI  +++ ", result);
         })
-        .catch(error => {
-            const errorInfo = error.message;
-            console.log("signin kompponentinin catch kısmı çalıştı, giriş başarısız !!!")
-            console.log(errorInfo);
+        .catch(() => {
+
+            return <div>Invalid Mail Or Password</div>
         })
         
 
