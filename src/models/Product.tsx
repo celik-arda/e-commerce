@@ -12,7 +12,6 @@ export interface AllProducts {
 }
 
 
-
 export interface MyContextType {
     auth: Auth,
     user: User | null | undefined;
