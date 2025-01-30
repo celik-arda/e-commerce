@@ -1,23 +1,20 @@
 import style from './EachProductDetail.module.css'
 import {useContext, useState, useEffect} from 'react'
 import MyAllContext from '../../contextProviders/MyContextProvider';
-import {Routes, Route, useParams, NavLink} from 'react-router-dom'
-import {collection, query} from "firebase/firestore";
+import {useParams} from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth';
+import {collection} from "firebase/firestore";
 import {db} from '../../../firebase';
 import { getTheProductById } from '../../utils/helpers/get-the-product-by-id-';
+// AllProducts Typescript interface //
 import { AllProducts } from '../../models/Product';
 
-const EachProductDetail = () => {
 
-    const productsRef = collection(db, "products");
-    
+const EachProductDetail = () => {    
     
     const [productLink, setProductLink] = useState<{[key: string]: string | undefined}>();
     const [selectedProduct, setSelectedProduct] = useState<AllProducts>();
-    
-    let myUrl = useParams();
-    // console.log("MYURL : ",myUrl," -- ",typeof myUrl);
-    
+    const [userBasketItems, setUserBasketItems] = useState<AllProducts[]>([]);
     
     let contextVariables = useContext(MyAllContext);
 
@@ -27,12 +24,55 @@ const EachProductDetail = () => {
         return <div>loading context...</div>;
     }
     
-    const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts, listResult, setListResult} = contextVariables;
+    const {auth, user,allProducts} = contextVariables;
+
     
+    // get the product id from url //
+    let myUrl = useParams();
+    let productLinkId = myUrl.myUrl
+    
+    
+    const handleToSaveProductInBasket = async(e: React.MouseEvent<Node>) => {
+        e.preventDefault();
+
+        if(!auth || !user) {
+            return <div>user is not valid</div>
+        }
+        
+        if (!productLinkId) {
+            return <div>No Clicked Product Id</div>
+        }
+
+        if (auth || user || productLinkId) {
+            
+            const updatedUserId = user.uid;
+            
+            const selectedItem = getTheProductById(allProducts, productLinkId)[0];
+            
+            let existingData = sessionStorage.getItem(`basket__${updatedUserId}`);
+
+            if (existingData === null) {
+
+                    const pickedProduct = [selectedItem]
+                    setUserBasketItems([selectedItem]);
+                    
+                    sessionStorage.setItem(`basket__${updatedUserId}`,JSON.stringify(pickedProduct));
+            }
+            else {
+                const parsedExistingItems : AllProducts[] = JSON.parse(existingData);
+                    
+                const updatedAllBasketItems = [...parsedExistingItems, selectedItem];
+                    
+                setUserBasketItems(updatedAllBasketItems);
+                    
+                sessionStorage.setItem(`basket__${updatedUserId}`, JSON.stringify(updatedAllBasketItems));
+                
+            }
+        }
+    }
+
 
     useEffect(() => {
-
-        const productLinkId = myUrl.myUrl;
         
         if (productLinkId) {
             setProductLink({productLinkId})
@@ -42,7 +82,6 @@ const EachProductDetail = () => {
             const selectedItem = getTheProductById(allProducts, productLinkId)[0];
 
             setSelectedProduct(selectedItem);
-            console.log(selectedProduct);
         }
         },[])
 
@@ -63,7 +102,7 @@ const EachProductDetail = () => {
                 </div>
                 <div className={style.price_and_buttons}>
                     <h3>{selectedProduct.price}<span> €</span></h3>
-                    <button>Add To Basket</button>
+                    <button onClick={handleToSaveProductInBasket}>Add To Basket</button>
                 </div>
             </div>
         </div>

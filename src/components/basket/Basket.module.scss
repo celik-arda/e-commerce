@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+
+.basket_container {
+    outline: $testline2;
+    width: 100%;
+    height: fit-content;
+    margin: 4rem auto;
+    padding: 2rem;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

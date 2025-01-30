@@ -1,0 +1,12 @@
+.basket_container {
+  outline: 4px dashed aqua;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 4rem auto;
+  padding: 2rem;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}/*# sourceMappingURL=Basket.module.css.map */
