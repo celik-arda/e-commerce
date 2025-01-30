@@ -1,6 +1,7 @@
 //  --- React Hooks ---
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import style from './SignIn.module.css';
+import MyAllContext from '../../../contextProviders/MyContextProvider.tsx';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 // Firebase Auth and SignIn Hook Import //
@@ -16,20 +17,23 @@ const SignIn = () => {
     const [redirect, setRedirect] = useState(false);
 
 
+    const contextVariables = useContext(MyAllContext);
+
+    if (!contextVariables) {
+        return <div>Context undefined </div>
+    }
+
+    const {auth, user} = contextVariables;
+    
     const handleLoginForm = async (e: any) => {
-
-
+        
         e.preventDefault();
         
         await signInWithEmailAndPassword(auth, email, password)
         .then(credentials => {
+            
             const loginResponse = credentials.user;
             setRedirect(true);
-            
-            return loginResponse;
-        })
-        .then(result => {
-            console.log("GİRİŞ BAŞARILI  +++ ", result);
         })
         .catch(() => {
 
