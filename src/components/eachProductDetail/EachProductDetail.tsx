@@ -1,7 +1,7 @@
 import style from './EachProductDetail.module.css'
 import {useContext, useState, useEffect} from 'react'
 import MyAllContext from '../../contextProviders/MyContextProvider';
-import {useParams} from 'react-router-dom'
+import {json, useParams} from 'react-router-dom'
 import { onAuthStateChanged } from 'firebase/auth';
 import {collection} from "firebase/firestore";
 import {db} from '../../../firebase';
@@ -25,65 +25,95 @@ const EachProductDetail = () => {
     }
     
     const {auth, user,allProducts} = contextVariables;
-
     
     // get the product id from url //
     let myUrl = useParams();
     let productLinkId = myUrl.myUrl
     
-    
-    const handleToSaveProductInBasket = async(e: React.MouseEvent<Node>) => {
-        e.preventDefault();
+    useEffect(() => {
+        if (productLinkId) {
+            setProductLink({productLinkId})
+            const selectedItem: AllProducts = getTheProductById(allProducts, productLinkId)[0];
+            setSelectedProduct(selectedItem);
+        }
+    },[])
 
-        if(!auth || !user) {
-            return <div>user is not valid</div>
+
+    const saveBasketToSessionStorage = (storagekey:string, prod: AllProducts | AllProducts[]) => {
+        
+        const existingSessionData: string | null = sessionStorage.getItem(`${storagekey}`);
+
+        if (!productLinkId) {
+            return;
         }
         
-        if (!productLinkId) {
-            return <div>No Clicked Product Id</div>
+        if (existingSessionData === null) {
+            let selectedArrayData = [prod];
+            sessionStorage.setItem(`${storagekey}`, JSON.stringify(selectedArrayData));
         }
-
-        if (auth || user || productLinkId) {
-            
-            const updatedUserId = user.uid;
-            
-            const selectedItem = getTheProductById(allProducts, productLinkId)[0];
-            
-            let existingData = sessionStorage.getItem(`basket__${updatedUserId}`);
-
-            if (existingData === null) {
-
-                    const pickedProduct = [selectedItem]
-                    setUserBasketItems([selectedItem]);
-                    
-                    sessionStorage.setItem(`basket__${updatedUserId}`,JSON.stringify(pickedProduct));
-            }
-            else {
-                const parsedExistingItems : AllProducts[] = JSON.parse(existingData);
-                    
-                const updatedAllBasketItems = [...parsedExistingItems, selectedItem];
-                    
-                setUserBasketItems(updatedAllBasketItems);
-                    
-                sessionStorage.setItem(`basket__${updatedUserId}`, JSON.stringify(updatedAllBasketItems));
-                
-            }
+        else if (existingSessionData) {
+            const existingParsedData: AllProducts[] = JSON.parse(existingSessionData);
+            const updatedBasketData = [...existingParsedData, prod];
+            sessionStorage.setItem(`${storagekey}`, JSON.stringify(updatedBasketData));
         }
     }
 
 
-    useEffect(() => {
+    
+
+    
+    const handleToSaveProductInBasket = async(e: React.MouseEvent<Node>) => {
         
-        if (productLinkId) {
-            setProductLink({productLinkId})
+        e.preventDefault();
+
+        if(!productLinkId) {
+            return;
         }
 
-        if (productLinkId && allProducts) {
-            const selectedItem = getTheProductById(allProducts, productLinkId)[0];
+        const selectedItem: AllProducts = getTheProductById(allProducts, productLinkId)[0];
+        
+        if (auth && user && productLinkId) {
+            
+            saveBasketToSessionStorage("user_basket",selectedItem);
 
-            setSelectedProduct(selectedItem);
+        // if(!auth || !user) {
+        //     return <div>user is not valid</div>
+        // }
+        
+        // if (!productLinkId) {
+        //     return <div>No Clicked Product Id</div>
+        // }
+
+        // if (auth || user || productLinkId) {
+            
+        //     const updatedUserId = user.uid;
+            
+        //     const selectedItem = getTheProductById(allProducts, productLinkId)[0];
+            
+        //     let existingData = sessionStorage.getItem(`basket__${updatedUserId}`);
+            
+        //     if (existingData === null) {
+                
+        //             setUserBasketItems([selectedItem]);
+                    
+        //             sessionStorage.setItem(`basket__${updatedUserId}`,JSON.stringify(selectedItem));
+        //     }
+        //     else {
+        //         const parsedExistingItems : AllProducts[] = JSON.parse(existingData);
+        //         console.log("storage'dan çekilen parslanan items : ", typeof parsedExistingItems)
+                    
+        //         const updatedAllBasketItems = [...parsedExistingItems, selectedItem];
+                    
+        //         setUserBasketItems(updatedAllBasketItems);
+                    
+        //         sessionStorage.setItem(`basket__${updatedUserId}`, JSON.stringify(updatedAllBasketItems));
+                
+        //     }
+        // }
         }
-        },[])
+    }
+
+
 
     if(!selectedProduct){
         return <div>ITEM IS UNAVAILABLE</div>
