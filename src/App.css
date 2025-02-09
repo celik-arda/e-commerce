@@ -33,6 +33,7 @@ body {
   padding: 2vw 6vw;
   height: -moz-fit-content;
   height: fit-content;
+  min-height: 100vh;
 }
 form input {
   font-size: 1.5rem;

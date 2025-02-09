@@ -1,12 +1,42 @@
-.form_area {
-    input {
-        width: 16em;
-        height: 4em;
-        margin-bottom: 1em;
-    }
+.login_form_container {
+    background-color: black;
+    margin: 6rem auto 0 auto;
+    width: 24rem;
+    height: 30rem;
+    padding: 2rem 2rem 3rem 2rem;
+    box-sizing: border-box;
+    border-radius: 2rem;
 
-    button {
-        width: 16em;
-        height: 4em;
+    form {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 4fr 6fr 4fr 6fr;
+        row-gap: 1%;
+
+        label {
+            text-align: center;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        .login_name_input {
+            margin-bottom: 2rem
+        }
+
+        .login_password_input {
+            margin-bottom: 2rem;
+        }
+
+        button {
+            width: 12rem;
+            margin: 0.5rem auto;
+        }
+
+        a {
+            margin-top: 0.9rem;
+            text-align: right;
+            font-size: 1rem;
+        }
     }
+    
 }
