@@ -105,22 +105,23 @@ const ProductSection = () => {
             <ul className={style.product_list}>
                 {
                 allProducts.map((item, index) => (
-                    <NavLink key={index} to={`/product/${item.id}`}>
-                    <li className={style.product_item}>
+
+                    <li key={index} className={style.product_item}>
                         <div className={style.thumbnail_container}>
                             <img className={style.product_thumbnail} src={item.thumbnail} alt='product_photo' />
                         </div>
                         <div>
-                            <h3>{item.title}</h3>
+                            <h3 className={style.item_title}>{item.title}</h3>
                         </div>
                         <div>
-                            <h3>{item.price}</h3>
+                            <h3 className={style.item_price}>{item.price}</h3>
                         </div>
                         <div>
-                            <button>Add To Basket</button>
+                            <NavLink  to={`/product/${item.id}`}>
+                                <button>More</button>
+                            </NavLink>
                         </div>
                     </li>
-                    </NavLink>
                 ))
                 }
             </ul>
