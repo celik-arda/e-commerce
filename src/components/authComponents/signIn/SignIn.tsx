@@ -76,12 +76,12 @@ const SignIn = () => {
                     onClick={handleLoginForm}>
                         Login
                     </button>
-                    <NavLink to='forgot_password' >Forgot my password</NavLink>
+                    <NavLink to='/forgot_password' >Forgot my password</NavLink>
                 </form>
 
-                <Routes>
-                    <Route element={<ForgotPassword />} path='/forgot_password' />
-                </Routes>
+                {/* <Routes>
+                    <Route path='/forgot_password' element={<ForgotPassword />} />
+                </Routes> */}
 
             </div>
         )
