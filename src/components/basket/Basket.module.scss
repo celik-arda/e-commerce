@@ -1,0 +1,163 @@
+@import '../../variables.scss';
+
+
+.basket_container {
+    width: 96%;
+    height: 74vh;
+    margin: 1rem auto 0 auto;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+
+    .title_area {
+        flex: 2;
+        font-size: 1.2rem;
+
+        h2 {
+            margin: 0.4rem;
+        }
+    }
+
+    .list_area {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        background-color: $background_regular;
+        border-radius: 1.2rem;
+        overflow-y: hidden;
+        height: 40vh;
+        
+        ul {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            overflow-y: scroll;
+            scrollbar-color: $button_dark $button_dark;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 4rem;
+                margin-bottom: 0.5rem;
+                gap: 0.4rem;
+                font-size: 1.1rem;
+
+                // &:nth-last-child(1) {
+                //     margin-bottom: 8rem;
+                // }
+
+                div {
+                    background-color: black;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .img_box {
+                    flex: 3;
+
+                    img {
+                        height: 88%;
+                        padding: 12%;
+                    }
+                }
+
+                .title_box {
+                    flex: 9;
+                }
+
+                .price_box {
+                    flex: 4;
+                }
+
+                .remove_box {
+                    flex: 4;
+
+                    .remove_button {
+                        font-size: 0.7rem;
+                        padding: 0.2rem 0.7rem;
+                        border-radius: 1rem;
+                        color: orange;
+                        border-color: orange;
+                        
+                        &:hover {
+                            transition-property: color, background-color, border-color;
+                            transition-duration: 350ms;
+                            transition-timing-function: ease-out;
+                            color: red;
+                            background-color: #FFD580;
+                            border-color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .basket_info_area {
+        flex: 3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.4rem 6rem 0.4rem 5.3rem;
+        background-color: $background_dark;
+        border-radius: 1rem;
+        margin-top: 0.8rem;
+        
+        
+        .product_piece_area {
+            flex: 4;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            row-gap: 1.5rem;
+
+            h4 {
+                font-size: 1.2rem;
+            }
+            
+            span {
+
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: $button_light;
+                margin-right: 0.4rem;
+            }
+        }
+        
+        .price_area {
+            flex: 3;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            
+            h4 {
+                display: block;
+                font-size: 1.2rem;
+            }
+
+            span {
+                display: block;
+                margin-left: 1rem;
+                font-size: 1.5rem;
+                color: $button_light;
+            }
+        }
+    }
+
+    .button_area {
+        margin-top: 0.6rem;
+        background-color: $background_dark;
+        flex: 3;
+        text-align: right;
+        padding: 1rem 6rem;
+        border-radius: 1rem;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}

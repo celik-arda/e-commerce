@@ -1,0 +1,132 @@
+.basket_container {
+  width: 96%;
+  height: 74vh;
+  margin: 1rem auto 0 auto;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+.basket_container .title_area {
+  flex: 2;
+  font-size: 1.2rem;
+}
+.basket_container .title_area h2 {
+  margin: 0.4rem;
+}
+.basket_container .list_area {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: #00190e;
+  border-radius: 1.2rem;
+  overflow-y: hidden;
+  height: 40vh;
+}
+.basket_container .list_area ul {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  scrollbar-color: #01c164 #01c164;
+}
+.basket_container .list_area ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+}
+.basket_container .list_area ul li div {
+  background-color: black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.basket_container .list_area ul li .img_box {
+  flex: 3;
+}
+.basket_container .list_area ul li .img_box img {
+  height: 88%;
+  padding: 12%;
+}
+.basket_container .list_area ul li .title_box {
+  flex: 9;
+}
+.basket_container .list_area ul li .price_box {
+  flex: 4;
+}
+.basket_container .list_area ul li .remove_box {
+  flex: 4;
+}
+.basket_container .list_area ul li .remove_box .remove_button {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 1rem;
+  color: orange;
+  border-color: orange;
+}
+.basket_container .list_area ul li .remove_box .remove_button:hover {
+  transition-property: color, background-color, border-color;
+  transition-duration: 350ms;
+  transition-timing-function: ease-out;
+  color: red;
+  background-color: #FFD580;
+  border-color: red;
+}
+.basket_container .basket_info_area {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 6rem 0.4rem 5.3rem;
+  background-color: #01180e;
+  border-radius: 1rem;
+  margin-top: 0.8rem;
+}
+.basket_container .basket_info_area .product_piece_area {
+  flex: 4;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+.basket_container .basket_info_area .product_piece_area h4 {
+  font-size: 1.2rem;
+}
+.basket_container .basket_info_area .product_piece_area span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #32c07c;
+  margin-right: 0.4rem;
+}
+.basket_container .basket_info_area .price_area {
+  flex: 3;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.basket_container .basket_info_area .price_area h4 {
+  display: block;
+  font-size: 1.2rem;
+}
+.basket_container .basket_info_area .price_area span {
+  display: block;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: #32c07c;
+}
+.basket_container .button_area {
+  margin-top: 0.6rem;
+  background-color: #01180e;
+  flex: 3;
+  text-align: right;
+  padding: 1rem 6rem;
+  border-radius: 1rem;
+}
+.basket_container .button_area a {
+  text-decoration: none;
+  color: inherit;
+}/*# sourceMappingURL=Basket.module.css.map */

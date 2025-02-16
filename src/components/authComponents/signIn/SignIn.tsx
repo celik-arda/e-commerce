@@ -1,64 +1,92 @@
 //  --- React Hooks ---
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import style from './SignIn.module.css';
-import { Navigate } from 'react-router-dom';
+import MyAllContext from '../../../contextProviders/MyContextProvider.tsx';
+import { Navigate, NavLink, Routes, Route } from 'react-router-dom';
+
+// Components
+import ForgotPassword from '../forgotPassword/ForgotPassword.tsx';
 
 // Firebase Auth and SignIn Hook Import //
 import { auth } from '../../../../firebase.tsx';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
+
 
 
 const SignIn = () => {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [redirect, setRedirect] = useState(false);
 
-    // check the profile's authorization state //
-    const  [user, isLogging] = useAuthState(auth);
 
+    const contextVariables = useContext(MyAllContext);
+
+    if (!contextVariables) {
+        return <div>Context undefined </div>
+    }
+
+    const {auth, user} = contextVariables;
+    
     const handleLoginForm = async (e: any) => {
         
         e.preventDefault();
-        console.log("giriş bilgileri : ",email, " / ", password);
         
-        signInWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password)
         .then(credentials => {
+            
             const loginResponse = credentials.user;
-            console.log("--Response : ",loginResponse)
-            return loginResponse;
+            setRedirect(true);
         })
-        .then(result => console.log("GİRİŞ BAŞARILI  +++ ", result))
-        .catch(error => {
-            const errorInfo = error.message;
-            console.log(errorInfo);
+        .catch(() => {
+
+            return <div>Invalid Mail Or Password</div>
         })
         
-        setEmail("");
-        setPassword("");
 
-        if (!user){
-            return <h1>is logging...</h1>;
-        }
-        else if (!isLogging){
-            console.log("---  logged in  ---- : ",user);
-            return <Navigate to='/' replace />
-        }
     } 
 
+    if (redirect) {
+        return <Navigate to='/' replace />
+    }
+    else {
+        return (
+            <div className={style.login_form_container}>
+                <form className={style.form_area}>
+                    <label htmlFor="login_name_input">Your Mail</label>
+                    <input 
+                    id="login_name_input"
+                    className={style.login_name_input} 
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)} 
+                    title='email' type='email'  
+                    placeholder='your email adress'
+                    />
+                    <label htmlFor='login_password_input'>Your Password</label>
+                    <input 
+                    id="login_password_input"
+                    className={style.login_password_input} 
+                    value={password} 
+                    onChange={e => setPassword(e.target.value)} 
+                    title='password' type='password'  
+                    placeholder='your password'
+                    />
+                    <button 
+                    type='submit' 
+                    onClick={handleLoginForm}>
+                        Login
+                    </button>
+                    <NavLink to='forgot_password' >Forgot my password</NavLink>
+                </form>
 
+                <Routes>
+                    <Route element={<ForgotPassword />} path='/forgot_password' />
+                </Routes>
 
-    return (
-        <div>
-            <form className={style.form_area}>
-                <input className={style.input_area} value={email} onChange={e => setEmail(e.target.value)} title='email' type='email'  placeholder='your email adress'/>
-                <br/>
-                <input className={style.input_area} value={password} onChange={e => setPassword(e.target.value)} title='password' type='password'  placeholder='your password'/>
-                <br/>
-                <button type='submit' onClick={handleLoginForm}>Login</button>
-            </form>
-        </div>
-    )
+            </div>
+        )
+    }
+
 }
 
-export default SignIn
+export default SignIn;

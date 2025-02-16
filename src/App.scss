@@ -17,10 +17,11 @@ body {
 
 
 .page_container {
+    background: repeating-linear-gradient(20deg, #01180e 600px, #034524 900px, #01180e 1550px);
     width: 88vw;
     padding: 2vw 6vw;
     height: fit-content;
-    background-image: linear-gradient(to top, $background_dark, $background_light);
+    min-height: 100vh;
 
     button {
         @extend %button_dark;
@@ -32,3 +33,4 @@ form {
         font-size: 1.5rem;
     }
 }
+

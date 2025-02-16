@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import { NavLink, Navigate } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import {auth} from '../../../firebase.tsx';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -9,20 +9,22 @@ const AuthButtonContainer = () => {
     const [user, isLogging] = useAuthState(auth);
     const [loadingState, setLoadingState] = useState(true);
 
+
     useEffect(() => {
 
-        if (isLogging !== null){
+        if (isLogging !== true){    
             setLoadingState(false);
         }
-        else if (isLogging === null){
+        else if (isLogging === true){
             setLoadingState(true);
         }
 
     },[isLogging])
 
-
-
+    
+    
     if (!loadingState){
+        
 
         if (!user) {
             return <NavLink to='/signin'><button className='button_dark' type='submit'>Signin</button></NavLink>
@@ -35,4 +37,4 @@ const AuthButtonContainer = () => {
 
 }
 
-export default AuthButtonContainer
+export default AuthButtonContainer;

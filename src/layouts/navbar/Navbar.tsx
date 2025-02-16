@@ -15,7 +15,7 @@ const Navbar = () => {
                     <div className={style.navbar}>
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/categories'>Categories</NavLink>
-                        <NavLink to='/basket'></NavLink>
+                        <NavLink to='/basket'>Basket</NavLink>
                         <AuthButtonContainer />
                         <NavLink to='/signup'>
                             <button className='button_dark' type='submit'>SignUp</button>

@@ -24,6 +24,11 @@ dist-ssr
 *.sw?
 
 
+# Firebase Private Infos
+*firebaseKey/
+serviceAccountKey.json
+
+
 #  Config Files and Others
 *.config.js
 *config*
@@ -32,3 +37,8 @@ dist-ssr
 
 # Scss Compile Files
 *css.map
+importData.cjs
+firestore.indexes.json
+products.json
+firebase.json
+.firebaserc

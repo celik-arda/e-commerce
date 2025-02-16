@@ -1,26 +1,39 @@
-import { auth } from '../../../../firebase.tsx';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-import { signOut } from 'firebase/auth';
-// import { useState } from 'react';
 import style from './SignOut.module.css';
-
+import {useState} from 'react'
+import {Navigate} from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../../../firebase.tsx'
 
 const SignOut = () => {
 
-    const handleLogoutForm = (e: any) => {
 
+    const [redirect, setRedirect] = useState<boolean>(false);
+
+    const handleLogout = async(e:any) => {
         e.preventDefault();
 
-        signOut(auth);
-
-        console.log("bayyss")
+        signOut(auth)
+        .then(() => {
+            setRedirect(true);
+        })
+        .catch(err => {
+            const msg = err;
+            console.log(msg);
+        })
+        sessionStorage.removeItem('user_basket');
     }
 
-    return (
-        <div className={style.out_button}>
-            <button onClick={handleLogoutForm} title='signout' type='submit'>Logout</button>
-        </div>
-    )
+    if (redirect) {
+        return <Navigate to='/' replace />;
+    }
+    else {
+        return (
+            <div className={style.signOut_container}>
+                <h4 className={style.leave_message}>You are leaving from website</h4>
+                <button type='submit' onClick={handleLogout}>Logout</button>
+            </div>
+        )
+    }
 }
 
 export default SignOut
