@@ -18,9 +18,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className={style.hero_right_side}>
-                    <div className={style.hero_img_container}>
-                        <img className={style.hero_image} src={hero_image} alt='heroImage' />
-                    </div>             
+                    <img className={style.hero_image} src={hero_image} alt='heroImage' />          
                 </div>
             </div>
         </div>

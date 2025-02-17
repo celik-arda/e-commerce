@@ -56,7 +56,7 @@
         flex: 1;
         padding: 2.3rem;
         display: grid;
-        grid-template-rows: 9fr 11fr 3fr;
+        grid-template-rows: 8fr 9fr 3fr;
         font-size: 1.3rem;
 
         h2 {
@@ -64,6 +64,7 @@
             font-size: 2.4rem;
             width: 96%;
             text-align: left;
+            margin-top: 0;
         }
 
         p {
@@ -76,24 +77,21 @@
         .hero_buttons {
             display: flex;
             gap: 2rem;
+            // margin-bottom: 1.5rem;
         }
     }
     .hero_right_side {
         flex: 1;
-        padding: 2.8rem;
+        padding: 4.6rem 2.3rem;
+        box-sizing: border-box;
+        text-align: right;
+
         
-        .hero_img_container {
-            width: 88%;
-            margin: auto auto;
-            border-radius: 2rem;
-
-
-            .hero_image {
-                max-width: 98%;
+        .hero_image {
+                max-width: 80%;
                 background-size: cover;
-                border-radius: 3rem;
-            }
+                border-radius: 2rem;
         }
-        
     }
+        
 }
