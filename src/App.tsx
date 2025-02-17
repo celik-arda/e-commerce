@@ -1,6 +1,7 @@
 import './App.css';
 import {useContext, useEffect} from 'react'
 import {Routes, Route, useParams} from 'react-router-dom'
+import ForgotPassword from './components/authComponents/forgotPassword/ForgotPassword.tsx';
 
 
 import MyAllContext from './contextProviders/MyContextProvider.tsx';
@@ -98,11 +99,15 @@ function App() {
                     <Route path='/signout' element={<SignOut />} />
                 </Routes>
 
-                    <Routes>
+                <Routes>
                     <Route path={`/product`} element={<EachProductLayout />}>
                         <Route path='/product/:myUrl' element={<EachProductDetail/>} />
                     </Route>
-                    </Routes>
+                </Routes>
+
+                <Routes>
+                    <Route path='/forgot_password' element={<ForgotPassword />} />
+                </Routes>
                 {/* --- (END) Navbar Link Routes ---*/}
             
             </div>

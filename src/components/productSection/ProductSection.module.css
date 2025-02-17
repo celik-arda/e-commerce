@@ -33,22 +33,29 @@
 }
 .product_section .product_list .product_item {
   background-color: black;
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 5fr 3fr auto 3fr;
   place-items: center;
   height: 360px;
   overflow: hidden;
   border-radius: 2em;
 }
-.product_section .product_list .product_item h3 {
+.product_section .product_list .product_item .item_title {
+  margin: 0px auto;
+  color: #01c164;
+  font-size: 1.7em;
+  padding: 0px;
+}
+.product_section .product_list .product_item .item_price {
   color: #01c164;
   font-size: 1.7em;
   padding: 0px;
 }
 .product_section .product_list .product_item button {
   line-height: 1.7rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  padding: 0.5rem 2.1rem;
 }
 .product_section .product_list .product_item .thumbnail_container {
   display: flex;

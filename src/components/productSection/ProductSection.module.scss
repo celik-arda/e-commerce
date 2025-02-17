@@ -16,15 +16,22 @@
         
         .product_item {
             background-color: black;
-            padding: 1rem;
+            padding: 2rem 1rem;
             display: grid;
-            grid-template-rows: 2fr 1fr 1fr 1fr;
+            grid-template-rows: 5fr 3fr auto 3fr;
             place-items: center;
             height: 360px;
             overflow: hidden;
             border-radius: 2em;
             
-            h3 {
+            .item_title {
+                margin: 0px auto;
+                color: $button_dark;
+                font-size: 1.7em;
+                padding: 0px;
+            }
+
+            .item_price {
                 color: $button_dark;
                 font-size: 1.7em;
                 padding: 0px;
@@ -33,7 +40,8 @@
             button {
                 @extend %button_dark;
                 line-height: 1.7rem;
-                font-size: 0.8rem;
+                font-size: 1rem;
+                padding: 0.5rem 2.1rem;
             }
 
 
