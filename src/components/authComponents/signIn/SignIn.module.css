@@ -1,35 +1,42 @@
 .login_form_container {
   background-color: black;
-  margin: 6rem auto 0 auto;
+  margin: 3rem auto 0 auto;
   width: 24rem;
-  height: 30rem;
-  padding: 2rem 2rem 3rem 2rem;
+  height: 32rem;
+  padding: 2rem;
   box-sizing: border-box;
   border-radius: 2rem;
 }
 .login_form_container form {
   width: 100%;
   display: grid;
-  grid-template-rows: 4fr 6fr 4fr 6fr;
+  grid-template-rows: 6fr 12fr 6fr 12fr 6fr 12fr 12fr;
   row-gap: 1%;
+  justify-items: center;
 }
 .login_form_container form label {
   text-align: center;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+.login_form_container form input, .login_form_container form label {
+  width: 70%;
+  height: 1rem;
 }
 .login_form_container form .login_name_input {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .login_form_container form .login_password_input {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .login_form_container form button {
-  width: 12rem;
-  margin: 0.5rem auto;
+  padding: 1.7rem 3.8rem;
+  line-height: 0rem;
+  height: 1.5rem;
+  margin: 0 auto;
 }
-.login_form_container form a {
+.login_form_container form .forgot_navlink {
   margin-top: 0.9rem;
-  text-align: right;
+  justify-self: end;
   font-size: 1rem;
 }/*# sourceMappingURL=SignIn.module.css.map */
