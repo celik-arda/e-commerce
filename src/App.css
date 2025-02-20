@@ -30,10 +30,10 @@ body {
 .page_container {
   background: repeating-linear-gradient(20deg, #01180e 600px, #034524 900px, #01180e 1550px);
   width: 88vw;
-  padding: 2vw 6vw;
+  padding: 2vh 6vw;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 100vh;
+  min-height: 96vh;
 }
 form input {
   font-size: 1.5rem;
