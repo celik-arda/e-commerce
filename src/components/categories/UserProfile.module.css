@@ -1,0 +1,45 @@
+.profile_page_container {
+  background-color: black;
+  margin: 2rem auto;
+  padding: 3rem;
+  width: 60%;
+  height: 30rem;
+  border-radius: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7rem;
+}
+.profile_page_container .user_pic_container {
+  outline: 2px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 3rem 2.7rem;
+  height: 100%;
+  flex: 4;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.profile_page_container .user_pic_container img {
+  background-color: grey;
+  width: 84%;
+  max-width: 84%;
+  border-radius: 1.4rem;
+}
+.profile_page_container .user_info_container {
+  outline: 2px solid orange;
+  height: 100%;
+  padding: 3rem;
+  flex: 8;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 3fr 2fr 2fr;
+  gap: 0.5rem;
+}
+.profile_page_container .user_info_container .user_nickname {
+  font-size: 1.6rem;
+}
+.profile_page_container .user_info_container .user_email {
+  font-size: 1.6rem;
+}/*# sourceMappingURL=UserProfile.module.css.map */

@@ -13,7 +13,7 @@ import Navbar from './layouts/navbar/Navbar.tsx'
 
 // ---  Components  ---  //
 import HomePage from './components/homePage/HomePage.tsx'
-import Categories from './components/categories/Categories.tsx';
+import UserProfile from './components/categories/UserProfile.tsx';
 import Basket from './components/basket/Basket.tsx';
 import SignIn from './components/authComponents/signIn/SignIn.tsx'
 import SignUp from './components/authComponents/signUp/SignUp.tsx'
@@ -92,7 +92,7 @@ function App() {
                 {/* --- Navbar Link Routes ---*/}
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
-                    <Route path='/categories' element={<Categories/>} />
+                    <Route path='/categories' element={<UserProfile/>} />
                     <Route path='/basket' element={<Basket />} />
                     <Route path='/signin' element={<SignIn />} />
                     <Route path='/signup' element={<SignUp />} />
