@@ -53,15 +53,6 @@ const SignIn = () => {
         return (
             <div className={style.login_form_container}>
                 <form className={style.form_area}>
-                    <label htmlFor="user_nickname">Your Nickname</label>
-                    <input 
-                    id="user_nickname"
-                    className={style.login_name_input} 
-                    value={email} 
-                    onChange={e => setEmail(e.target.value)} 
-                    title='email' type='email'  
-                    placeholder='your email adress'
-                    />
                     <label htmlFor="login_name_input">Your Mail</label>
                     <input 
                     id="login_name_input"
@@ -85,7 +76,7 @@ const SignIn = () => {
                     onClick={handleLoginForm}>
                         Login
                     </button>
-                    <NavLink className={style.forgot_navlink} to='/forgot_password' >Forgot my password</NavLink>
+                    <NavLink to='/forgot_password' >Forgot my password</NavLink>
                 </form>
 
                 {/* <Routes>
