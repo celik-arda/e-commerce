@@ -1,5 +1,5 @@
 .profile_page_container {
-  background-color: black;
+  background-color: #00190e;
   margin: 2rem auto;
   padding: 3rem;
   width: 60%;
@@ -12,6 +12,7 @@
 }
 .profile_page_container .user_pic_container {
   outline: 2px solid orange;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -20,6 +21,7 @@
   flex: 4;
   box-sizing: border-box;
   overflow: hidden;
+  border-radius: 1.3rem;
 }
 .profile_page_container .user_pic_container img {
   background-color: grey;
@@ -29,6 +31,7 @@
 }
 .profile_page_container .user_info_container {
   outline: 2px solid orange;
+  background-color: black;
   height: 100%;
   padding: 3rem;
   flex: 8;
@@ -36,6 +39,7 @@
   display: grid;
   grid-template-rows: 3fr 2fr 2fr;
   gap: 0.5rem;
+  border-radius: 1.3rem;
 }
 .profile_page_container .user_info_container .user_nickname {
   font-size: 1.6rem;
