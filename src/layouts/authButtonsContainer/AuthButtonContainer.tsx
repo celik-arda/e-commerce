@@ -27,10 +27,31 @@ const AuthButtonContainer = () => {
         
 
         if (!user) {
-            return <NavLink to='/signin'><button className='button_dark' type='submit'>Signin</button></NavLink>
+            return (
+                <>
+                    <NavLink to='/signin'>
+                        <button className='button_dark' type='submit'>SignIn</button>
+                    </NavLink>
+                    <NavLink to='/signup'  >
+                        <button className='button_dark'>SignUp</button>
+                    </NavLink>
+                </>
+            )
         }
+
+        // user is logged in and can reach other buttons like "signout" or "profile" //
         else if (user) {
-            return <NavLink to='/signout'><button className='button_dark' type='submit'>SignOut</button></NavLink>
+            return (
+            <>
+                <NavLink to='/signout'>
+                    <button className='button_dark' type='submit'>SignOut</button>
+                </NavLink>
+                <NavLink to='/user_profile'>
+                    <button className='button_dark' type='submit'>My Profile</button>
+                </NavLink>
+
+            </>
+            )
         }
     }
 

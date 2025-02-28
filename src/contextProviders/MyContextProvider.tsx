@@ -2,6 +2,7 @@ import { createContext, useState, ReactNode } from "react";
 import { auth } from '../../firebase.tsx';
 import { User, Auth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { FieldValue } from 'firebase/firestore';
 
 
 interface AllProducts {
@@ -31,6 +32,8 @@ interface MyContextType {
     setListResult: (newValue: AllProducts[]) => void,
     userAuthState: boolean,
     setUserAuthState: (newValue: boolean) => void,
+    createdAccountTime: FieldValue | undefined,
+    setCreatedAccountTime: (newValue: FieldValue | undefined) => void,
 }
 
 
@@ -45,6 +48,7 @@ export const MyContextProvider = ({children}: {children: ReactNode}) => {
     const [listResult, setListResult] = useState<AllProducts[]>([]);
     const [searchResultVisible, setSearchResultVisible] = useState<boolean>(false);
     const [userAuthState, setUserAuthState] = useState<boolean>(false);
+    const [createdAccountTime, setCreatedAccountTime] = useState<FieldValue | undefined>(undefined);
     
     const myContext : MyContextType = {
 
@@ -63,6 +67,8 @@ export const MyContextProvider = ({children}: {children: ReactNode}) => {
         setListResult,
         userAuthState,
         setUserAuthState,
+        createdAccountTime,
+        setCreatedAccountTime,
     }
     
     return (

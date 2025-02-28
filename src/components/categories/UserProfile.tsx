@@ -1,4 +1,5 @@
 import {useContext, useEffect, useState} from 'react';
+import { NavLink } from 'react-router-dom';
 import MyAllContext from '../../contextProviders/MyContextProvider';
 import style from './UserProfile.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +16,7 @@ const UserProfile = () => {
         return;
     }
 
-    const {auth} = contextVariables;
+    const {auth, createdAccountTime} = contextVariables;
 
     
     useEffect(() => {
@@ -53,13 +54,15 @@ const UserProfile = () => {
             </div>
             <div className={style.user_info_container}>
                 <div className={style.user_nickname}>
-                    {nickName}
-                </div>
-                <div className={style.user_email}>
                     {userEmail}
                 </div>
+                <div className={style.timeStamp}>
+                    
+                </div>
                 <div className={style.user_basket}>
-                    <button>Basket</button>
+                    <NavLink to='/basket'>
+                        <button className='button_dark'>Basket</button>
+                    </NavLink>
                 </div>
             </div>
         </div>

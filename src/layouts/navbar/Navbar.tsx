@@ -16,10 +16,13 @@ const Navbar = () => {
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/categories'>Categories</NavLink>
                         <NavLink to='/basket'>Basket</NavLink>
+                       
+                        {/* --- Component Changing Buttons Based On AuthState ---*/}
                         <AuthButtonContainer />
-                        <NavLink to='/signup'>
+                       
+                        {/* <NavLink to='/signup'>
                             <button className='button_dark' type='submit'>SignUp</button>
-                        </NavLink>
+                        </NavLink> */}
                     </div>
                 </nav>
             </div>

@@ -1,5 +1,7 @@
+@import '../../variables.scss';
+
 .profile_page_container {
-    background-color: black;
+    background-color: $background_regular;
     margin: 2rem auto;
     padding: 3rem;
     width: 60%;
@@ -12,6 +14,7 @@
     
     .user_pic_container {
         outline: 2px solid orange;
+        background-color: black;
         display: flex;
         justify-content: center;
         align-items: start;
@@ -20,6 +23,7 @@
         flex: 4;
         box-sizing: border-box;
         overflow: hidden;
+        border-radius: 1.3rem;
         
         img {
             background-color: grey;
@@ -28,9 +32,10 @@
             border-radius: 1.4rem;
         }
     }
-
+    
     .user_info_container {
         outline: 2px solid orange;
+        background-color: black;
         height: 100%;
         padding: 3rem;
         flex: 8;
@@ -38,6 +43,7 @@
         display: grid;
         grid-template-rows: 3fr 2fr 2fr;
         gap: 0.5rem;
+        border-radius: 1.3rem;
 
         .user_nickname {
             font-size: 1.6rem;

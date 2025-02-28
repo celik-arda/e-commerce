@@ -1,48 +1,40 @@
 .login_form_container {
     background-color: black;
-    margin: 3rem auto 0 auto;
+    margin: 6rem auto 0 auto;
     width: 24rem;
-    height: 32rem;
-    padding: 2rem;
+    height: 30rem;
+    padding: 2rem 2rem 3rem 2rem;
     box-sizing: border-box;
     border-radius: 2rem;
 
     form {
         width: 100%;
         display: grid;
-        grid-template-rows: 6fr 12fr 6fr 12fr 6fr 12fr 12fr;
+        grid-template-rows: 4fr 6fr 4fr 6fr;
         row-gap: 1%;
-        justify-items: center;
-
 
         label {
             text-align: center;
             font-weight: 600;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
-         input, label {
-            width: 70%;
-            height: 1rem;
-         }
 
         .login_name_input {
-            margin-bottom: 1.5rem
+            margin-bottom: 2rem
         }
 
         .login_password_input {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         button {
-            padding: 1.7rem 3.8rem;
-            line-height: 0rem;
-            height: 1.5rem;
-            margin: 0 auto;
+            width: 12rem;
+            margin: 0.5rem auto;
         }
 
-        .forgot_navlink {
+        a {
             margin-top: 0.9rem;
-            justify-self: end;
+            text-align: right;
             font-size: 1rem;
         }
     }
