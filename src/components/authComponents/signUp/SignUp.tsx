@@ -7,7 +7,6 @@ const SignUp = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    console.log(typeof email);
 
     const handleSignUpForm : (param: any) => any = (e) => {
         e.preventDefault();
@@ -29,11 +28,30 @@ const SignUp = () => {
 
     return (
         <div className={style.myform}>
+            <h2>Create A New Account</h2>
             <form className={style.form_area}>
-                <input className={style.input_area} value={email} onChange={e => setEmail(e.target.value)} title='email' type='email'  placeholder='your email adress'/>
-                <br/>
-                <input className={style.input_area} value={password} onChange={e => setPassword(e.target.value)} title='password' type='password'  placeholder='your password'/>
-                <br/>
+
+                <label htmlFor='signup_email'>Your Email</label>
+                <input 
+                id='signup_email'
+                className={style.input_area} 
+                value={email} 
+                onChange={e => setEmail(e.target.value)} 
+                title='email' type='email'  
+                placeholder='your email adress'
+                />
+                
+
+                <label htmlFor='signup_password'>Your Password</label>
+                <input 
+                id='signup_password'
+                className={style.input_area} 
+                value={password} 
+                onChange={e => setPassword(e.target.value)} 
+                title='password' type='password'  
+                placeholder='your password'
+                />
+                
                 <button type='submit' onClick={handleSignUpForm}>Login</button>
             </form>
         </div>

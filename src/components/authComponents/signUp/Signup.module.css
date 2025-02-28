@@ -1,9 +1,46 @@
+.myform {
+  width: 22rem;
+  height: 26rem;
+  margin: 4rem auto;
+  background-color: black;
+  border-radius: 1.4rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.myform h2 {
+  font-size: 1.7rem;
+  color: #2c6639;
+}
+.myform .form_area {
+  width: 80%;
+  height: 75%;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-rows: 3fr 4fr 3fr 4fr 8fr;
+  justify-content: space-between;
+  gap: 3%;
+  text-align: center;
+}
+.myform .form_area label {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 .myform .form_area input {
-  width: 16em;
-  height: 4em;
-  margin-bottom: 1em;
+  margin: 0 auto;
+  width: 70%;
+  height: 0.8rem;
+  border: 2px solid #2c6639;
+  outline: none;
+}
+.myform .form_area input:focus {
+  outline: none;
+  border: 2px solid #01c164;
 }
 .myform .form_area button {
-  width: 16em;
-  height: 4em;
+  margin: 1.6rem auto 0 auto;
+  width: 14rem;
+  height: 3.6rem;
 }/*# sourceMappingURL=Signup.module.css.map */

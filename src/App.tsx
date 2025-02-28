@@ -97,6 +97,7 @@ function App() {
                     <Route path='/signin' element={<SignIn />} />
                     <Route path='/signup' element={<SignUp />} />
                     <Route path='/signout' element={<SignOut />} />
+                    <Route path='/user_profile' element={<UserProfile />} />
                 </Routes>
 
                 <Routes>
