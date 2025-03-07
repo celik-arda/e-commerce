@@ -5,21 +5,36 @@
   width: 60%;
   height: 30rem;
   border-radius: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 7rem;
 }
 .profile_page_container .user_pic_container {
   outline: 2px solid orange;
   background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   padding: 3rem 2.7rem;
   height: 100%;
-  flex: 4;
-  box-sizing: border-box;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   border-radius: 1.3rem;
 }
@@ -34,8 +49,11 @@
   background-color: black;
   height: 100%;
   padding: 3rem;
-  flex: 8;
-  box-sizing: border-box;
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: grid;
   grid-template-rows: 3fr 2fr 2fr;
   gap: 0.5rem;
