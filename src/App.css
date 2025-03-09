@@ -10,27 +10,34 @@
   border-radius: 2.2rem;
 }
 .page_container button:hover {
+  -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
-  transition-duration: 350ms;
-  transition-timing-function: ease-out;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
   color: white;
   background-color: #01c164;
 }
 
 body {
-  font-size: 62.5%;
+  font-size: 63.5%;
   display: inline;
   margin: 0 auto;
   padding: 0 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  box-sizing: border-box;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  -webkit-padding-end: 0;
+          padding-inline-end: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .page_container {
   background: repeating-linear-gradient(20deg, #01180e 600px, #034524 900px, #01180e 1550px);
   width: 88vw;
   padding: 2vh 6vw;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   min-height: 96vh;
