@@ -7,25 +7,41 @@ input {
   background-color: black;
   border-radius: 2em;
   padding: 4rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: start;
-  align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 5rem;
   width: 100%;
   height: 100px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .search_filter_container .search_area {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .search_filter_container .search_area .search_form {
   position: relative;
   display: block;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
 }/*# sourceMappingURL=SearchAndFilterInputs.module.css.map */

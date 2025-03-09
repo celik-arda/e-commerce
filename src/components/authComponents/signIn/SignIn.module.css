@@ -4,7 +4,8 @@
   width: 24rem;
   height: 30rem;
   padding: 2rem 2rem 3rem 2rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 2rem;
 }
 .login_form_container form {

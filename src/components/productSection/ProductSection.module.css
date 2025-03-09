@@ -10,9 +10,12 @@
   border-radius: 2.2rem;
 }
 .product_section .product_list .product_item button:hover {
+  -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
-  transition-duration: 350ms;
-  transition-timing-function: ease-out;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
   color: white;
   background-color: #01c164;
 }
@@ -20,10 +23,15 @@
 .product_section {
   width: 88vw;
   margin: 4rem auto;
+  max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .product_section .product_list {
   display: grid;
@@ -58,8 +66,12 @@
   padding: 0.5rem 2.1rem;
 }
 .product_section .product_list .product_item .thumbnail_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .product_section .product_list .product_item .thumbnail_container .product_thumbnail {
   width: 80%;

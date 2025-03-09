@@ -7,7 +7,9 @@
   height: 18rem;
   display: grid;
   grid-template-rows: 5fr 2fr;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .signOut_container h4 {
   font-size: 2.5rem;
