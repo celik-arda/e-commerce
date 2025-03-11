@@ -1,10 +1,4 @@
 .profile_page_container {
-  background-color: #00190e;
-  margin: 2rem auto;
-  padding: 3rem;
-  width: 60%;
-  height: 30rem;
-  border-radius: 1.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,10 +8,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #00190e;
+  margin: 2rem auto;
+  padding: 3rem;
+  width: 60%;
+  height: 27rem;
+  border-radius: 1.6rem;
   gap: 7rem;
 }
 .profile_page_container .user_pic_container {
-  outline: 2px solid orange;
   background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,14 +39,14 @@
 }
 .profile_page_container .user_pic_container img {
   background-color: grey;
-  width: 84%;
-  max-width: 84%;
+  width: 100%;
+  max-width: 100%;
   border-radius: 1.4rem;
 }
 .profile_page_container .user_info_container {
-  outline: 2px solid orange;
   background-color: black;
   height: 100%;
+  max-height: 100%;
   padding: 3rem;
   -webkit-box-flex: 8;
       -ms-flex: 8;
@@ -55,13 +54,38 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: grid;
-  grid-template-rows: 3fr 2fr 2fr;
-  gap: 0.5rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-template-rows: 6fr 6fr 8fr;
   border-radius: 1.3rem;
+  text-align: center;
 }
-.profile_page_container .user_info_container .user_nickname {
+.profile_page_container .user_info_container .user_nickname,
+.profile_page_container .user_info_container .register_date {
   font-size: 1.6rem;
+  color: white;
 }
-.profile_page_container .user_info_container .user_email {
-  font-size: 1.6rem;
+.profile_page_container .user_info_container .user_nickname h4,
+.profile_page_container .user_info_container .register_date h4 {
+  color: #2c6639;
+  margin: 0 auto;
+}
+.profile_page_container .user_info_container .user_nickname h5,
+.profile_page_container .user_info_container .register_date h5 {
+  margin: 0 auto;
+}
+.profile_page_container .user_info_container .user_basket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }/*# sourceMappingURL=UserProfile.module.css.map */
