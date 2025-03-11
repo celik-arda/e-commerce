@@ -1,0 +1,74 @@
+@import '../../../variables';
+
+.profile_page_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $background_regular;
+    margin: 2rem auto;
+    padding: 3rem;
+    width: 60%;
+    height: 27rem;
+    border-radius: 1.6rem;
+    gap: 7rem;
+    
+    .user_pic_container {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding: 3rem 2.7rem;
+        height: 100%;
+        flex: 4;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 1.3rem;
+        
+        img {
+            background-color: grey;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 1.4rem;
+        }
+    }
+    
+    .user_info_container {
+        background-color: black;
+        height: 100%;
+        max-height: 100%;
+        padding: 3rem;
+        flex: 8;
+        box-sizing: border-box;
+        display: grid;
+        align-content: center;
+        grid-template-rows: 6fr 6fr 8fr;
+        // gap: aut;
+        border-radius: 1.3rem;
+        text-align: center;
+
+        
+        .user_nickname,
+        .register_date {
+            font-size: 1.6rem;
+            color: white;
+            
+            h4 {
+                color: $text_regular;
+                margin: 0 auto;
+            }
+
+            h5 {
+                margin: 0 auto;
+            }
+        }
+
+        .user_basket {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+        }
+        
+    }
+}
