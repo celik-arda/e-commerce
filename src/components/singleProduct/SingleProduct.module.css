@@ -1,0 +1,53 @@
+button {
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.4rem;
+  border: 0.2em solid #01c164;
+  color: #01c164;
+  border-radius: 2.2rem;
+}
+button:hover {
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  color: white;
+  background-color: #01c164;
+}
+
+.item_title {
+  margin: 0px auto;
+  color: #01c164;
+  font-size: 1.7em;
+  padding: 0px;
+}
+
+.item_price {
+  color: #01c164;
+  font-size: 1.7em;
+  padding: 0px;
+}
+
+button {
+  line-height: 1.7rem;
+  font-size: 1rem;
+  padding: 0.5rem 2.1rem;
+}
+
+.thumbnail_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.thumbnail_container .product_thumbnail {
+  width: 80%;
+  background-color: transparent;
+}/*# sourceMappingURL=SingleProduct.module.css.map */

@@ -7,6 +7,7 @@ import { Auth, User } from 'firebase/auth';
 import { db } from '../../../firebase.tsx';
 import { Product } from '../../models/Product.tsx'
 import EachProductDetail from '../eachProductDetail/EachProductDetail.tsx';
+import SingleProduct from '../singleProduct/SingleProduct.tsx';
 
 
 
@@ -48,10 +49,7 @@ const ProductSection = () => {
         return <div>productsection load...</div>;
     }
     
-    const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts, listResult, setListResult} = contextVariables;
-    
-
-    
+    const {allProducts, setAllProducts} = contextVariables;
     
     let getAllProductsFromFirestore = (collectionRef : any) => {
         
@@ -61,7 +59,6 @@ const ProductSection = () => {
             // if my database collection is not empty //
             if (!querySnapshot.empty){
                 
-
                 let fetchedProducts: AllProducts[] = querySnapshot.docs.map((e) => {
                     
                     let eachProduct = e.data() as AllProducts; 
@@ -76,7 +73,6 @@ const ProductSection = () => {
                         eachProduct.thumbnail,
                         eachProduct.availabilityStatus,
                     )
-                
                 })
                 setAllProducts(fetchedProducts);
             }
@@ -93,7 +89,6 @@ const ProductSection = () => {
         return allProducts;
     }
     
-    
     useEffect(() => {
         getAllProductsFromFirestore(productsRef);
     },[])
@@ -101,29 +96,14 @@ const ProductSection = () => {
         
     return (
         <div className={style.product_section}>
-
             <ul className={style.product_list}>
                 {
-                allProducts.map((item, index) => (
-
+                allProducts.map((item: AllProducts | undefined, index) => (
                     <li key={index} className={style.product_item}>
-                        <div className={style.thumbnail_container}>
-                            <img className={style.product_thumbnail} src={item.thumbnail} alt='product_photo' />
-                        </div>
-                        <div>
-                            <h3 className={style.item_title}>{item.title}</h3>
-                        </div>
-                        <div>
-                            <h3 className={style.item_price}>{item.price}</h3>
-                        </div>
-                        <div>
-                            <NavLink  to={`/product/${item.id}`}>
-                                <button>More</button>
-                            </NavLink>
-                        </div>
+                        <SingleProduct item={item} />
                     </li>
                 ))
-                }
+            }
             </ul>
 
         </div>

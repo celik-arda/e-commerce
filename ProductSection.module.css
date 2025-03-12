@@ -18,7 +18,7 @@
   padding-inline: 0;
 }
 .product_section .product_list .product_item {
-  background-color: black;
+  background-color: red;
   padding: 2rem 1rem;
   display: grid;
   grid-template-rows: 5fr 3fr auto 3fr;
