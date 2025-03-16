@@ -20,7 +20,6 @@ const EachProductDetail = () => {
 
     
     if(!contextVariables){
-        console.log("context yükleniyor...")
         return <div>loading context...</div>;
     }
     
@@ -59,9 +58,6 @@ const EachProductDetail = () => {
     }
 
 
-    
-
-    
     const handleToSaveProductInBasket = async(e: React.MouseEvent<Node>) => {
         
         e.preventDefault();
@@ -75,45 +71,8 @@ const EachProductDetail = () => {
         if (auth && user && productLinkId) {
             
             saveBasketToSessionStorage("user_basket",selectedItem);
-
-        // if(!auth || !user) {
-        //     return <div>user is not valid</div>
-        // }
-        
-        // if (!productLinkId) {
-        //     return <div>No Clicked Product Id</div>
-        // }
-
-        // if (auth || user || productLinkId) {
-            
-        //     const updatedUserId = user.uid;
-            
-        //     const selectedItem = getTheProductById(allProducts, productLinkId)[0];
-            
-        //     let existingData = sessionStorage.getItem(`basket__${updatedUserId}`);
-            
-        //     if (existingData === null) {
-                
-        //             setUserBasketItems([selectedItem]);
-                    
-        //             sessionStorage.setItem(`basket__${updatedUserId}`,JSON.stringify(selectedItem));
-        //     }
-        //     else {
-        //         const parsedExistingItems : AllProducts[] = JSON.parse(existingData);
-        //         console.log("storage'dan çekilen parslanan items : ", typeof parsedExistingItems)
-                    
-        //         const updatedAllBasketItems = [...parsedExistingItems, selectedItem];
-                    
-        //         setUserBasketItems(updatedAllBasketItems);
-                    
-        //         sessionStorage.setItem(`basket__${updatedUserId}`, JSON.stringify(updatedAllBasketItems));
-                
-        //     }
-        // }
         }
     }
-
-
 
     if(!selectedProduct){
         return <div>ITEM IS UNAVAILABLE</div>
@@ -121,7 +80,7 @@ const EachProductDetail = () => {
     return (
         <div className={style.detail_page}>
             <div className={style.detail_img_container}>
-                <img src={selectedProduct.images[0]} className={style.detail_img}/>
+                <img src={selectedProduct.images[0]} className={style.detail_img} alt='more_info_image' />
             </div>
             <div className={style.detail_info_container}>
                 <h2 className={style.title_area}>
