@@ -1,63 +1,59 @@
 import style from './EachProductDetail.module.css'
 import {useContext, useState, useEffect} from 'react'
 import MyAllContext from '../../contextProviders/MyContextProvider';
-import {json, useParams} from 'react-router-dom'
-import { onAuthStateChanged } from 'firebase/auth';
-import {collection} from "firebase/firestore";
-import {db} from '../../../firebase';
+import {useParams} from 'react-router-dom'
 import { getTheProductById } from '../../utils/helpers/get-the-product-by-id-';
+
+// Static Class For Storage Process  //
+import { BrowserStorage } from '../../models/BrowserStorageProcess.tsx';
+
 // AllProducts Typescript interface //
 import { AllProducts } from '../../models/Product';
 
 
-const EachProductDetail = () => {    
-    
+const EachProductDetail = () => {
     const [productLink, setProductLink] = useState<{[key: string]: string | undefined}>();
     const [selectedProduct, setSelectedProduct] = useState<AllProducts>();
     const [userBasketItems, setUserBasketItems] = useState<AllProducts[]>([]);
     
     let contextVariables = useContext(MyAllContext);
-
+    
     
     if(!contextVariables){
         return <div>loading context...</div>;
     }
     
+    //  get context  //
     const {auth, user,allProducts} = contextVariables;
     
     // get the product id from url //
     let myUrl = useParams();
     let productLinkId = myUrl.myUrl
-    
+
     useEffect(() => {
+        console.log("safdsdfsfasfsdafsfasasfsdfsafsfs")
+        
         if (productLinkId) {
             setProductLink({productLinkId})
             const selectedItem: AllProducts = getTheProductById(allProducts, productLinkId)[0];
             setSelectedProduct(selectedItem);
         }
     },[])
-
-
-    const saveBasketToSessionStorage = (storagekey:string, prod: AllProducts | AllProducts[]) => {
         
-        const existingSessionData: string | null = sessionStorage.getItem(`${storagekey}`);
-
-        if (!productLinkId) {
-            return;
-        }
-        
-        if (existingSessionData === null) {
-            let selectedArrayData = [prod];
-            sessionStorage.setItem(`${storagekey}`, JSON.stringify(selectedArrayData));
-        }
-        else if (existingSessionData) {
-            const existingParsedData: AllProducts[] = JSON.parse(existingSessionData);
-            const updatedBasketData = [...existingParsedData, prod];
-            sessionStorage.setItem(`${storagekey}`, JSON.stringify(updatedBasketData));
-        }
-    }
+        const saveBasketToSessionStorage = (storage_key:string, product: AllProducts, product_link_id: string) => {
 
 
+            const existingSessionData = BrowserStorage.getItemsFromSessionStorage(`${storage_key}`)
+            
+            if (!product_link_id) {
+                return;
+            }
+
+            BrowserStorage.saveItemsToSessionStorage(existingSessionData, product, storage_key);
+            
+
+        }
+            
     const handleToSaveProductInBasket = async(e: React.MouseEvent<Node>) => {
         
         e.preventDefault();
@@ -70,7 +66,7 @@ const EachProductDetail = () => {
         
         if (auth && user && productLinkId) {
             
-            saveBasketToSessionStorage("user_basket",selectedItem);
+            saveBasketToSessionStorage("user_basket",selectedItem, productLinkId);
         }
     }
 
