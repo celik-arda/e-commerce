@@ -13,7 +13,6 @@
         gap: 5rem;
         padding-inline: 0;
         
-        
         .product_item {
             background-color: black;
             padding: 2rem 1rem;
@@ -23,38 +22,6 @@
             height: 360px;
             overflow: hidden;
             border-radius: 2em;
-            
-            .item_title {
-                margin: 0px auto;
-                color: $button_dark;
-                font-size: 1.7em;
-                padding: 0px;
-            }
-
-            .item_price {
-                color: $button_dark;
-                font-size: 1.7em;
-                padding: 0px;
-            }
-
-            button {
-                @extend %button_dark;
-                line-height: 1.7rem;
-                font-size: 1rem;
-                padding: 0.5rem 2.1rem;
-            }
-
-
-            .thumbnail_container {
-                display: flex;
-                justify-content: center;
-
-                .product_thumbnail {
-                    width: 80%;
-                    background-color: transparent;
-                }
-            }
-                
         }
     }
 

@@ -1,5 +1,6 @@
 import './App.css';
 import {useContext, useEffect} from 'react'
+import AppRoutes from './routes/AppRoutes.tsx';
 import {Routes, Route, useParams} from 'react-router-dom'
 import ForgotPassword from './components/authComponents/forgotPassword/ForgotPassword.tsx';
 
@@ -85,32 +86,12 @@ function App() {
         <>
             <div className="page_container">
 
-                {/* --- Page Layout as Navbar --- */}
+                {/* ---  Navbar Layout  --- */}
                 <Navbar />
-                {/* --- (END) Page Layout as Navbar --- */}
                 
-                {/* --- Navbar Link Routes ---*/}
-                <Routes>
-                    <Route path='/' element={<HomePage/>}/>
-                    {/* <Route path='/categories' element={<UserProfile/>} /> */}
-                    <Route path='/basket' element={<Basket />} />
-                    <Route path='/signin' element={<SignIn />} />
-                    <Route path='/signup' element={<SignUp />} />
-                    <Route path='/signout' element={<SignOut />} />
-                    <Route path='/user_profile' element={<UserProfile />} />
-                </Routes>
+                {/* ---  Project Routes  --- */}
+                <AppRoutes />
 
-                <Routes>
-                    <Route path={`/product`} element={<EachProductLayout />}>
-                        <Route path='/product/:myUrl' element={<EachProductDetail/>} />
-                    </Route>
-                </Routes>
-
-                <Routes>
-                    <Route path='/forgot_password' element={<ForgotPassword />} />
-                </Routes>
-                {/* --- (END) Navbar Link Routes ---*/}
-            
             </div>
         </>
     )

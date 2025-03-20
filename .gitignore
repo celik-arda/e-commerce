@@ -42,3 +42,6 @@ firestore.indexes.json
 products.json
 firebase.json
 .firebaserc
+firestore.rules
+e-commerce.code-workspace
+firestore.rules
