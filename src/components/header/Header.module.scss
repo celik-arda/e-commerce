@@ -43,52 +43,66 @@
 
 
 .hero_section {
-    @extend %centered_flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     width: fit-content;
     margin: 2rem auto;
-    padding: 3.5em;
-    max-height: 450px;
+    padding: 0 3.5em;
+    height: 74vh;
+    max-height: 580px;
+    min-height: 500px;
     background-color: black;
     border-radius: 3em;
+    gap: 5%;
+    box-sizing: border-box;
     
     .hero_left_side {
-        flex: 1;
-        padding: 2.3rem;
+        width: 50%;
+        height: 100%;
+        padding: 3rem 2.3rem;
         display: grid;
-        grid-template-rows: 8fr 9fr 3fr;
-        font-size: 1.3rem;
+        grid-template-rows: 7fr 8fr 4fr;
+        box-sizing: border-box;
 
         h2 {
             display: inline-block;
-            font-size: 2.4rem;
-            width: 96%;
+            font-size: 2.3rem;
+            width: 95%;
             text-align: left;
             margin-top: 0;
+            margin-bottom: 0;
         }
 
         p {
             display: inline-block;
-            font-size: 1.2rem;
-            width: 78%;
+            font-size: 1.4rem;
+            width: 72%;
             text-align: left;
         }
 
         .hero_buttons {
             display: flex;
+            align-items: end;
             gap: 2rem;
-            // margin-bottom: 1.5rem;
+
         }
     }
     .hero_right_side {
-        flex: 1;
-        padding: 4.6rem 2.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 45%;
+        height: 100%;
+        padding: 3.7rem 2.3rem 3rem 2.3rem;
         box-sizing: border-box;
         text-align: right;
 
         
         .hero_image {
-                max-width: 80%;
+                max-width: 100%;
+                max-height: 100%;
                 background-size: cover;
                 border-radius: 2rem;
         }
