@@ -1,3 +1,6 @@
+@import '../../variables';
+
+
 .detail_page {
     margin-top: 2.6rem;
     display: flex;
@@ -13,10 +16,10 @@
     }
 
     .detail_img_container {
-        background-color: black;
+        background-color: $card_background;
         display: flex;
         justify-content: center;
-        align-items: start  ;
+        align-items: flex-start;
         border-radius: 2rem;
         width: 36%;
         height: 86%;

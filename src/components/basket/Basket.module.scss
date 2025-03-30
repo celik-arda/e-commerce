@@ -32,7 +32,7 @@
             height: 100%;
             box-sizing: border-box;
             overflow-y: scroll;
-            scrollbar-color: $button_dark $button_dark;
+            scrollbar-color: $button_color;
 
             li {
                 display: flex;
@@ -122,7 +122,7 @@
 
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: $button_light;
+                color: $button_color;
                 margin-right: 0.4rem;
             }
         }
@@ -142,7 +142,7 @@
                 display: block;
                 margin-left: 1rem;
                 font-size: 1.5rem;
-                color: $button_light;
+                color: $button_color;
             }
         }
     }

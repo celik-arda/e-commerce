@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 .detail_page .detail_img_container {
-  background-color: black;
+  background-color: #F5F5F4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +28,7 @@
           justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: start;
+          align-items: flex-start;
   border-radius: 2rem;
   width: 36%;
   height: 86%;

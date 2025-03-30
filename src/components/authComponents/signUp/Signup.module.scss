@@ -4,7 +4,7 @@
     width: 22rem;
     height: 26rem;
     margin: 4rem auto;
-    background-color: black;
+    background-color: $card_background;
     border-radius: 1.4rem;
     box-sizing: border-box;
     display: flex;
@@ -41,7 +41,7 @@
 
             &:focus {
                 outline: none;
-                border: 2px solid $button_dark;
+                border: 2px solid $button_color;
             }
         }
         

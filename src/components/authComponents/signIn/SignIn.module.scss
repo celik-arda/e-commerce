@@ -1,5 +1,7 @@
+@import '../../../variables';
+
 .login_form_container {
-    background-color: black;
+    background-color: $card_background;
     margin: 6rem auto 0 auto;
     width: 24rem;
     height: 30rem;

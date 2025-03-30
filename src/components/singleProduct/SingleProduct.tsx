@@ -28,7 +28,7 @@ const SingleProduct = ({ item }: {item: AllProducts | undefined}) => {
                         </div>
                         <div>
                             <NavLink  to={`/product/${item.id}`}>
-                                <button>More</button>
+                                <button className={style.product_button}>More</button>
                             </NavLink>
                         </div>
                     </>

@@ -1,8 +1,10 @@
 @import '../../variables';
+@import '../../mixinsResponsive';
     
 .thumbnail_container {
         display: flex;
         justify-content: center;
+        
 
         .product_thumbnail {
             width: 74%;
@@ -15,7 +17,7 @@
         display: flex;
         justify-content: end;
         margin: 0px auto;
-        color: $button_dark;
+        color: $button_color!important;
         font-size: 1.7em;
         padding: 0px;
         text-align: center;
@@ -24,21 +26,28 @@
                 display: inline-block;
                 position: absolute;
                 top:0;
+                color: $button_color!important;
                 margin-top: 0;
         }
 }
 
 .item_price {
-        color: $button_dark;
+        color: $button_color!important;
         font-size: 1.7em;
         padding: 0px;
 }
 
-button {
-        @extend %button_dark;
+.product_button {
+        @extend %button_regular;
         line-height: 1.7rem;
         font-size: 1rem;
         padding: 0.5rem 2.1rem;
+
+        @include respond-to ("small_laptop") {
+            line-height: 1.2rem!important;
+            font-size: 1rem!important;
+            padding: 0.5rem 1.2rem!important;
+        }
 }
 
 

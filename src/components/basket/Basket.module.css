@@ -39,7 +39,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: scroll;
-  scrollbar-color: #01c164 #01c164;
+  scrollbar-color: #1E90FF;
 }
 .basket_container .list_area ul li {
   display: -webkit-box;
@@ -150,7 +150,7 @@
 .basket_container .basket_info_area .product_piece_area span {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #32c07c;
+  color: #1E90FF;
   margin-right: 0.4rem;
 }
 .basket_container .basket_info_area .price_area {
@@ -175,7 +175,7 @@
   display: block;
   margin-left: 1rem;
   font-size: 1.5rem;
-  color: #32c07c;
+  color: #1E90FF;
 }
 .basket_container .button_area {
   margin-top: 0.6rem;

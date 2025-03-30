@@ -2,7 +2,7 @@
   width: 22rem;
   height: 26rem;
   margin: 4rem auto;
-  background-color: black;
+  background-color: #F5F5F4;
   border-radius: 1.4rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -22,7 +22,7 @@
 }
 .myform h2 {
   font-size: 1.7rem;
-  color: #2c6639;
+  color: #344451;
 }
 .myform .form_area {
   width: 80%;
@@ -44,12 +44,12 @@
   margin: 0 auto;
   width: 70%;
   height: 0.8rem;
-  border: 2px solid #2c6639;
+  border: 2px solid #344451;
   outline: none;
 }
 .myform .form_area input:focus {
   outline: none;
-  border: 2px solid #01c164;
+  border: 2px solid #1E90FF;
 }
 .myform .form_area button {
   margin: 1.6rem auto 0 auto;
