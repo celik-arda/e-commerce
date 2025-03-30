@@ -5,43 +5,42 @@
 $background_dark: #01180e;
 $background_regular: #00190e;
 $background_light: #034524;
-$text_regular: #2c6639;
+$card_background: #F5F5F4;
+$text_regular: #344451;
 $card_dark: #000c06;
 $card_light: #011d10;
-$button_dark: #01c164;
-$button_light: #32c07c;
+$button_color: #1E90FF;
 $icon_regular: #29a66a;
 // --- (END) Page Colors ---  //
 
 
 
 // --- Inherited Templates --- //
-%page_background {
-    background-image: linear-gradient(to top, $background_dark, $background_light);;
-}
 
 %centered_content {
     margin: 2em auto;
     padding: 5% 5%;
 }
 
-%button_dark {
+%button_regular {
     background-color: transparent;
     text-align: center;
-    color: white;
+    color: $text_regular;
+    font-weight: 500;
     line-height: 1.5rem;
     font-size: 1.2rem;
     padding: 0.8rem 1.4rem;
-    border: 0.2em solid $button_dark;
-    color: $button_dark;
+    border: 0.2em solid $button_color;
+    color: $button_color;
     border-radius: 2.2rem;
+    transition-property: color, background-color;      transition-duration: 350ms;
+    transition-timing-function: ease-out;
 
     &:hover {
-        transition-property: color, background-color;
-        transition-duration: 350ms;
-        transition-timing-function: ease-out;
         color: white;
-        background-color: $button_dark;
+        background-color: $button_color;
+        box-shadow: 0 0 2px #1E90FF,
+        0 0 2.5px #66B7FF;
     }
 }
 
