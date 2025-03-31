@@ -50,9 +50,16 @@ form {
         font-size: 1.5rem;
         background-color: $text_regular!important;
         color: $card_background!important;
+        padding: 0.8rem 0.6rem;
+        border-radius: 0.7rem;
+
+        @include respond-to ("small_laptop") {
+            font-size: 1.3rem;
+            padding: 0.6rem 0.4rem;
+        }
     }
+
     label {
         color: $text_regular;
     }
 }
-

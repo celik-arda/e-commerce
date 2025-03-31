@@ -1,4 +1,5 @@
 @import '../../variables';
+@import '../../mixinsResponsive';
 
 .header_container {
     display: flex;
@@ -46,40 +47,62 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: fit-content;
     margin: 2rem auto;
     padding: 0 3.5em;
     height: 74vh;
     max-height: 580px;
-    min-height: 500px;
-    background-color: black;
+    min-height: 68vh;
+    background-color: $card_background;
     border-radius: 3em;
     gap: 5%;
     box-sizing: border-box;
+
+    @include respond-to("small_laptop") {
+        height: 68vh;
+        max-height: 68vh;
+        gap: 3%;
+    }
     
     .hero_left_side {
         width: 50%;
         height: 100%;
+        max-height: 100%;
         padding: 3rem 2.3rem;
         display: grid;
-        grid-template-rows: 7fr 8fr 4fr;
+        grid-template-rows: 8fr 8fr 4fr;
         box-sizing: border-box;
+
+        @include respond-to("small_laptop") {
+            width: 52%;
+            height: 90%;
+            max-height: 90%;
+        }
+
 
         h2 {
             display: inline-block;
             font-size: 2.3rem;
-            width: 95%;
+            width: 98%;
             text-align: left;
             margin-top: 0;
             margin-bottom: 0;
+
+            @include respond-to("small_laptop") {
+                font-size: 2rem;
+                padding-bottom: 0.7rem;
+            }
         }
 
         p {
             display: inline-block;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             width: 72%;
             text-align: left;
+
+            @include respond-to("small_laptop") {
+                font-size: 1.1rem;
+            }
         }
 
         .hero_buttons {
@@ -99,9 +122,13 @@
         box-sizing: border-box;
         text-align: right;
 
+        @include respond-to("small_laptop") {
+            height: 90%;
+            max-height: 90%;
+        }
         
         .hero_image {
-                max-width: 100%;
+                // max-width: 100%;
                 max-height: 100%;
                 background-size: cover;
                 border-radius: 2rem;

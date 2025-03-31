@@ -1,9 +1,11 @@
 @import '../../_variables.scss';
+@import '../../mixinsResponsive.scss';
 
 .product_section {
     width: 88vw;
     margin: 4rem auto;
-    max-height: fit-content;
+    height: fit-content;
+    max-height: max-content;
     display: flex;
     justify-content: center;
     
@@ -16,15 +18,21 @@
         padding-inline: 0;
         
         .product_item {
-            background-color: black;
-            padding: 2rem 1rem;
             display: grid;
+            background-color: $card_background;
+            padding: 2rem 1rem;
             grid-template-rows: 5fr 6fr 3fr 4fr;
-            place-items: center;
+            // place-items: center;
+            justify-items: center;
+            align-content: space-between;
             max-height: 360px;
             aspect-ratio: 7 / 10;
             overflow: hidden;
             border-radius: 2em;
+
+            @include respond-to ("small_laptop") {
+                grid-template-rows: 5fr 7fr 5fr 4fr;
+            }
         }
     }
 
