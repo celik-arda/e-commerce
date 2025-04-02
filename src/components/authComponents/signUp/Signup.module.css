@@ -1,58 +1,61 @@
-.myform {
-  width: 22rem;
-  height: 26rem;
-  margin: 4rem auto;
-  background-color: #F5F5F4;
-  border-radius: 1.4rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.myform h2 {
-  font-size: 1.7rem;
-  color: #344451;
-}
-.myform .form_area {
-  width: 80%;
-  height: 75%;
-  padding: 1rem 1rem;
-  display: grid;
-  grid-template-rows: 3fr 4fr 3fr 4fr 8fr;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 3%;
-  text-align: center;
-}
-.myform .form_area label {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
 .myform .form_area input {
-  margin: 0 auto;
-  width: 70%;
-  height: 0.8rem;
-  border: 2px solid #344451;
-  outline: none;
+  max-width: 90%;
+  margin-bottom: 2rem;
+  outline: 3px solid #091A2F !important;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
 }
 .myform .form_area input:focus {
-  outline: none;
-  border: 2px solid #1E90FF;
+  outline: 6px solid #1E90FF !important;
+}
+
+.myform {
+  width: 25rem;
+  height: 32rem;
+  margin: 4rem auto 0 auto;
+  padding: 2rem 2rem 4rem 2rem;
+  background-color: #F5F5F4;
+  border-radius: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .myform {
+    width: 23rem;
+    height: 28rem;
+  }
+}
+.myform .form_area {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 9fr 6fr 11fr 6fr 8fr;
+  justify-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+.myform .form_area h2 {
+  margin: 0 auto;
+  font-size: 1.9rem;
+  color: #1E90FF;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .myform .form_area h2 {
+    font-size: 1.8rem;
+  }
+}
+.myform .form_area label {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .myform .form_area label {
+    font-size: 1.6rem;
+  }
 }
 .myform .form_area button {
-  margin: 1.6rem auto 0 auto;
+  margin: 1rem auto 0 auto;
   width: 14rem;
   height: 3.6rem;
 }/*# sourceMappingURL=Signup.module.css.map */

@@ -1,36 +1,65 @@
+.login_form_container .form_area input {
+  max-width: 90%;
+  margin-bottom: 2rem;
+  outline: 3px solid #091A2F !important;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+}
+.login_form_container .form_area input:focus {
+  outline: 6px solid #1E90FF !important;
+}
+
 .login_form_container {
+  width: 25rem;
+  height: 32rem;
+  padding: 2rem;
+  margin: 4rem auto 0 auto;
   background-color: #F5F5F4;
-  margin: 6rem auto 0 auto;
-  width: 24rem;
-  height: 30rem;
-  padding: 2rem 2rem 3rem 2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
 }
-.login_form_container form {
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .login_form_container {
+    width: 23rem;
+    height: 28rem;
+  }
+}
+.login_form_container .form_area {
   width: 100%;
+  height: 100%;
+  margin: 0 auto;
   display: grid;
-  grid-template-rows: 4fr 6fr 4fr 6fr;
-  row-gap: 1%;
+  grid-template-rows: 6fr 4fr 6fr 4fr 6fr 6fr 2fr;
+  justify-items: center;
 }
-.login_form_container form label {
-  text-align: center;
+.login_form_container .form_area h2 {
+  margin: 0 auto;
+  font-size: 1.9rem;
+  color: #1E90FF;
+}
+.login_form_container .form_area label {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
-.login_form_container form .login_name_input {
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .login_form_container .form_area label {
+    font-size: 1.6rem;
+  }
+}
+.login_form_container .form_area .login_name_input {
   margin-bottom: 2rem;
 }
-.login_form_container form .login_password_input {
+.login_form_container .form_area .login_password_input {
   margin-bottom: 2rem;
 }
-.login_form_container form button {
-  width: 12rem;
+.login_form_container .form_area button {
+  width: 15rem;
   margin: 0.5rem auto;
 }
-.login_form_container form a {
+.login_form_container .form_area a {
   margin-top: 0.9rem;
-  text-align: right;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  justify-self: end;
 }/*# sourceMappingURL=SignIn.module.css.map */

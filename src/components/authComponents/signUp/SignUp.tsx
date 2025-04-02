@@ -27,21 +27,6 @@ const SignUp = () => {
         const userInfos = credentials.user
         return userInfos;
         })
-        // .then(userInfos => {
-        //     const uid = userInfos.uid;
-        //     const email = userInfos.email;
-
-        //     if (!email) {
-        //         return;
-        //     }
-        //     const customerRef = doc(db, "customers", uid);
-
-
-        //     setDoc(customerRef, {
-        //         email: email,
-        //         createdAt: serverTimestamp(),
-        //     });
-        // })
         .catch(err => {
             const msg = err.message;
             console.log("hata : ",msg);
@@ -54,12 +39,12 @@ const SignUp = () => {
             const customerRef = doc(db, "customers", uid);
             
             // push new member to customers collection //
-            // firebase timestamp should reach storage(server) to transform to real time data //
+            // "firebase timestamp" should reach storage(server) to transform to real time data //
             await setDoc(customerRef, {
                 email: email,
                 createdAt: serverTimestamp(),
             });
-            await setUserAuthState(true);
+            setUserAuthState(true);
     }
 
     onAuthStateChanged(auth, user => {
@@ -75,10 +60,11 @@ const SignUp = () => {
     if (!userAuthState) {
         return (
             <div className={style.myform}>
-                <h2>Create A New Account</h2>
                 <form className={style.form_area}>
 
-                    <label htmlFor='signup_email'>Your Email</label>
+                    <h2>Create A New Account</h2>
+                    
+                    <label htmlFor='signup_email'>Your Mail</label>
                     <input 
                     id='signup_email'
                     className={style.input_area} 
