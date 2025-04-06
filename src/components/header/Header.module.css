@@ -45,7 +45,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1em;
+  gap: 6em;
 }
 .header_container .header_menu .nav_container a {
   display: inline-block;
@@ -84,6 +84,18 @@
     gap: 3%;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .hero_section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    width: 100%;
+    max-height: none;
+    height: 86vh;
+    padding: 2.3rem 2.3rem;
+  }
+}
 .hero_section .hero_left_side {
   width: 50%;
   height: 100%;
@@ -101,6 +113,19 @@
     max-height: 90%;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .hero_section .hero_left_side {
+    width: 100%;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 10fr 3fr;
+    gap: 5%;
+  }
+}
 .hero_section .hero_left_side h2 {
   display: inline-block;
   font-size: 2.3rem;
@@ -115,6 +140,11 @@
     padding-bottom: 0.7rem;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .hero_section .hero_left_side h2 {
+    display: none;
+  }
+}
 .hero_section .hero_left_side p {
   display: inline-block;
   font-size: 1.5rem;
@@ -126,6 +156,17 @@
     font-size: 1.1rem;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .hero_section .hero_left_side p {
+    width: 100%;
+    margin: 0;
+    text-align: justify;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-size: italic;
+    color: #344451;
+  }
+}
 .hero_section .hero_left_side .hero_buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -135,7 +176,25 @@
           align-items: end;
   gap: 2rem;
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .hero_section .hero_left_side .hero_buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.hero_section .hero_left_side .hero_buttons button {
+  width: 7rem;
+}
 .hero_section .hero_right_side {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,16 +209,66 @@
   padding: 3.7rem 2.3rem 3rem 2.3rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  text-align: right;
-}
-@media screen and (min-width: 1200px) and (max-width: 1400px) {
-  .hero_section .hero_right_side {
-    height: 90%;
-    max-height: 90%;
-  }
 }
 .hero_section .hero_right_side .hero_image {
+  display: block;
   max-height: 100%;
-  background-size: cover;
   border-radius: 2rem;
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .hero_section .hero_right_side {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .hero_section .hero_right_side::before {
+    content: "Everything you can imagine is here for you to buy";
+    position: absolute;
+    font-size: 2.2rem;
+    text-align: left;
+    width: 75%;
+    line-height: 3.2rem;
+    font-weight: 600;
+    z-index: 12;
+    bottom: 4%;
+    left: 4%;
+    -webkit-animation-name: highlight-text-herosection;
+            animation-name: highlight-text-herosection;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  @-webkit-keyframes highlight-text-herosection {
+    0% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 3px 3px 3px white;
+    }
+  }
+  @keyframes highlight-text-herosection {
+    0% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 3px 3px 3px white;
+    }
+  }
 }/*# sourceMappingURL=Header.module.css.map */

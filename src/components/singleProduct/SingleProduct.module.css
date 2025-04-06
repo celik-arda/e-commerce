@@ -83,4 +83,11 @@
     font-size: 1rem !important;
     padding: 0.5rem 1.2rem !important;
   }
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .product_button {
+    line-height: 1.6rem !important;
+    font-size: 1rem !important;
+    padding: 0.3rem 1rem !important;
+  }
 }/*# sourceMappingURL=SingleProduct.module.css.map */

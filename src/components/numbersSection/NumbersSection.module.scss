@@ -10,6 +10,10 @@
     column-gap: 3em;
     gap: 14%;
 
+    @include respond-to("tablet_device") {
+        gap: 5%;
+    }
+
     .numbers_card {
         width: 26%;
         background-color: $card_background;
@@ -35,6 +39,13 @@
             border-radius: 3em;
         }
 
+        @include respond-to("tablet_device") {
+            width: 30%;
+            padding: 0.8rem;
+            grid-template-rows: 4fr 12fr;
+
+        }
+
         .number {
             font-size: 2.7rem;
             font-weight: 600;
@@ -42,17 +53,24 @@
             @include respond-to ("small_laptop") {
                 font-size: 2.5rem;
             }
+
+            @include respond-to ("tablet_device") {
+                font-size: 1.9rem;
+            }
         }
 
         .number_text {
             font-size: 2.7em;
             color: $text-regular;
-            line-height: 100%;
             margin: 0 auto;
 
             @include respond-to ("small_laptop") {
                 font-size: 2.4em;
-                line-height: 100%;
+            }
+
+            @include respond-to ("tablet_device") {
+                font-size: 1.3rem;
+                line-height: 90%;
             }
         }
     }
