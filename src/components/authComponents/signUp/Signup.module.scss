@@ -15,6 +15,12 @@
         height: 28rem;
     }
     
+    @include respond-to("tablet_device") {
+        margin: 5rem auto 2rem auto;
+        width: 30rem;
+        height: 38rem;
+        padding: 2rem 2rem 5.4rem 2rem;
+    }
     
     .form_area {
         width: 100%;
@@ -24,6 +30,11 @@
         grid-template-rows: 9fr 6fr 11fr 6fr 8fr;
         justify-items: center;
         align-content: space-between;
+
+        @include respond-to("tablet_device") {
+            grid-template-rows: 6fr 3fr 6fr 3fr 6fr;
+
+        }
         
         h2 {
             margin: 0 auto;
@@ -32,6 +43,10 @@
 
             @include respond-to("small_laptop") {
                 font-size: 1.8rem;
+            }
+
+            @include respond-to("tablet_device") {
+                font-size: 2.3rem;
             }
         }
 
@@ -47,12 +62,25 @@
         input {
 
             @extend %auth_pages_input;
+
+            @include respond-to("tablet_device") {
+                font-size: 1.5rem!important;
+                width: 90%;
+                height: 61%;
+                padding: 0 0.4rem;
+            }
         }
         
         button {
             margin: 1rem auto 0 auto;
             width: 14rem;
             height: 3.6rem;
+
+            @include respond-to("tablet_device") {
+                margin: 0.7rem auto 0.4rem auto;
+                width: 13.5rem;
+                height: 4.1rem;
+            }
         }
 
     }

@@ -25,6 +25,14 @@
     height: 28rem;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .myform {
+    margin: 5rem auto 2rem auto;
+    width: 30rem;
+    height: 38rem;
+    padding: 2rem 2rem 5.4rem 2rem;
+  }
+}
 .myform .form_area {
   width: 100%;
   height: 100%;
@@ -34,6 +42,11 @@
   justify-items: center;
   -ms-flex-line-pack: justify;
       align-content: space-between;
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .myform .form_area {
+    grid-template-rows: 6fr 3fr 6fr 3fr 6fr;
+  }
 }
 .myform .form_area h2 {
   margin: 0 auto;
@@ -45,6 +58,11 @@
     font-size: 1.8rem;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .myform .form_area h2 {
+    font-size: 2.3rem;
+  }
+}
 .myform .form_area label {
   font-size: 1.8rem;
   font-weight: 600;
@@ -54,8 +72,23 @@
     font-size: 1.6rem;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .myform .form_area input {
+    font-size: 1.5rem !important;
+    width: 90%;
+    height: 61%;
+    padding: 0 0.4rem;
+  }
+}
 .myform .form_area button {
   margin: 1rem auto 0 auto;
   width: 14rem;
   height: 3.6rem;
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .myform .form_area button {
+    margin: 0.7rem auto 0.4rem auto;
+    width: 13.5rem;
+    height: 4.1rem;
+  }
 }/*# sourceMappingURL=Signup.module.css.map */

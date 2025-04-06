@@ -25,18 +25,36 @@
     height: 28rem;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .login_form_container {
+    margin: 5rem auto 2rem auto;
+    width: 30rem;
+    height: 38rem;
+  }
+}
 .login_form_container .form_area {
   width: 100%;
   height: 100%;
   margin: 0 auto;
   display: grid;
+  grid-template-columns: 1fr;
   grid-template-rows: 6fr 4fr 6fr 4fr 6fr 6fr 2fr;
   justify-items: center;
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .login_form_container .form_area {
+    grid-template-rows: 6fr 3fr 6fr 3fr 6fr 6fr 2fr;
+  }
 }
 .login_form_container .form_area h2 {
   margin: 0 auto;
   font-size: 1.9rem;
   color: #1E90FF;
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .login_form_container .form_area h2 {
+    font-size: 2.4rem;
+  }
 }
 .login_form_container .form_area label {
   font-weight: 600;
@@ -45,6 +63,12 @@
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
   .login_form_container .form_area label {
     font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .login_form_container .form_area input {
+    font-size: 1.5rem !important;
+    width: 90%;
   }
 }
 .login_form_container .form_area .login_name_input {
@@ -57,9 +81,20 @@
   width: 15rem;
   margin: 0.5rem auto;
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .login_form_container .form_area button {
+    width: 13.5rem;
+    margin: 1.1rem auto;
+  }
+}
 .login_form_container .form_area a {
   margin-top: 0.9rem;
   font-size: 1.1rem;
   font-weight: 600;
   justify-self: end;
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .login_form_container .form_area a {
+    font-size: 1.3rem;
+  }
 }/*# sourceMappingURL=SignIn.module.css.map */
