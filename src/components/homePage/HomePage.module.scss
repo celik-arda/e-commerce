@@ -3,7 +3,7 @@
 
 
 // Importing main variables for App.css //
-@import '../_variables.scss';
+@import '../../variables';
 
 body {
     font-size: 62.5%;
@@ -23,6 +23,6 @@ body {
     background-image: linear-gradient(to top, $background_dark, $background_light);
 
     button {
-        @extend %button_dark;
+        @extend %button_regular;
     }
 }

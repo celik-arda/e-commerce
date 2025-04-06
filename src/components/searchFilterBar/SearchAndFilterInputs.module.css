@@ -1,12 +1,7 @@
-input {
-  padding: 0.8rem 0.6rem;
-  border-radius: 0.7rem;
-}
-
 .search_filter_container {
-  background-color: black;
+  background-color: #F5F5F4;
   border-radius: 2em;
-  padding: 4rem 3rem;
+  padding: 1rem 3.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,11 +11,18 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 5rem;
+  gap: 3.8rem;
   width: 100%;
   height: 100px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .search_filter_container {
+    width: 100%;
+    height: unset;
+    aspect-ratio: 100/8;
+  }
 }
 .search_filter_container .search_area {
   position: relative;
@@ -44,4 +46,60 @@ input {
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
+}
+.search_filter_container .sort_form_area {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+.search_filter_container .sort_form_area select {
+  width: 100%;
+  font-size: 1.5rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #344451 !important;
+  color: #F5F5F4 !important;
+  padding: 0.8rem 3.3rem 0.8rem 0.6rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .search_filter_container .sort_form_area select {
+    font-size: 1.3rem;
+    padding: 0.6rem 3.3rem 0.6rem 0.6rem;
+  }
+}
+.search_filter_container .sort_form_area option {
+  width: 100%;
+  font-size: 1.3rem;
+  border-radius: 25rem;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .search_filter_container .sort_form_area option {
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 25rem;
+    font-size: 1rem;
+    padding: 0.6rem 3.3rem 0.6rem 0.6rem;
+  }
+}
+.search_filter_container .sort_form_area img {
+  pointer-events: none;
+  position: absolute;
+  background-color: #344451;
+  width: 20%;
+  top: 0.3rem;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
 }/*# sourceMappingURL=SearchAndFilterInputs.module.css.map */

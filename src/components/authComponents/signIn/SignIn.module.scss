@@ -1,22 +1,46 @@
-.login_form_container {
-    background-color: black;
-    margin: 6rem auto 0 auto;
-    width: 24rem;
-    height: 30rem;
-    padding: 2rem 2rem 3rem 2rem;
-    box-sizing: border-box;
-    border-radius: 2rem;
+@import '../../../variables';
+@import '../../../mixinsResponsive.scss';
 
-    form {
+.login_form_container {
+    width: 25rem;
+    height: 32rem;
+    padding: 2rem;
+    margin: 4rem auto 0 auto;
+    background-color: $card_background;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+
+    @include respond-to("small_laptop") {
+        width:23rem;
+        height: 28rem;
+    }
+
+    .form_area {
         width: 100%;
+        height: 100%;
+        margin: 0 auto;
         display: grid;
-        grid-template-rows: 4fr 6fr 4fr 6fr;
-        row-gap: 1%;
+        grid-template-rows:6fr 4fr 6fr 4fr 6fr 6fr 2fr;
+        justify-items: center;
+
+        h2 {
+            margin: 0 auto;
+            font-size: 1.9rem;
+            color: $button_color;
+        }
 
         label {
-            text-align: center;
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 1.8rem;
+
+            @include respond-to("small_laptop") {
+                font-size: 1.6rem;
+            }
+        }
+
+        input {
+
+            @extend %auth_pages_input;
         }
 
         .login_name_input {
@@ -28,14 +52,15 @@
         }
 
         button {
-            width: 12rem;
+            width: 15rem;
             margin: 0.5rem auto;
         }
 
         a {
             margin-top: 0.9rem;
-            text-align: right;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            justify-self: end;
         }
     }
     

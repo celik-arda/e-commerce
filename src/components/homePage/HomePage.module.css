@@ -1,12 +1,26 @@
 .page_container button {
   background-color: transparent;
   text-align: center;
+  color: #344451;
+  font-weight: 500;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.4rem;
+  border: 0.2em solid #1E90FF;
+  color: #1E90FF;
+  border-radius: 2.2rem;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+.page_container button:hover {
   color: white;
-  font-size: 1em;
-  padding: 0.3em 1em;
-  border: 0.1em solid #01c164;
-  color: #01c164;
-  border-radius: 1.6em;
+  background-color: #1E90FF;
+  -webkit-box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
+          box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
 }
 
 body {
@@ -14,15 +28,20 @@ body {
   display: inline;
   margin: 0 auto;
   padding: 0 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  box-sizing: border-box;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  -webkit-padding-end: 0;
+          padding-inline-end: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .page_container {
   width: 88vw;
   padding: 2vw 6vw;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#01180e), to(#034524));
   background-image: linear-gradient(to top, #01180e, #034524);
 }/*# sourceMappingURL=HomePage.module.css.map */

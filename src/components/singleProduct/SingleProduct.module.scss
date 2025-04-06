@@ -1,8 +1,10 @@
 @import '../../variables';
+@import '../../mixinsResponsive';
     
 .thumbnail_container {
         display: flex;
         justify-content: center;
+        
 
         .product_thumbnail {
             width: 74%;
@@ -11,34 +13,53 @@
 }
         
 .item_title {
-        position: relative;
         display: flex;
-        justify-content: end;
+        // justify-content: start;
+        align-items: start;
         margin: 0px auto;
-        color: $button_dark;
-        font-size: 1.7em;
+        color: $button_color!important;
+        font-size: 1.8em;
         padding: 0px;
         text-align: center;
 
+        @include respond-to ("small_laptop") {
+                font-size: 1rem
+        }
+
         h3 {
                 display: inline-block;
-                position: absolute;
-                top:0;
                 margin-top: 0;
+                color: $button_color!important;
+                
+                // @include respond-to ("small_laptop") {
+
+                // }
         }
 }
 
 .item_price {
-        color: $button_dark;
-        font-size: 1.7em;
+        color: $button_color!important;
+        font-size: 1.8em;
         padding: 0px;
+        margin: 0 auto;
+
+        @include respond-to ("small_laptop") {
+                font-size: 1rem;
+                // line-height: 100%;
+        }
 }
 
-button {
-        @extend %button_dark;
+.product_button {
+        @extend %button_regular;
         line-height: 1.7rem;
         font-size: 1rem;
         padding: 0.5rem 2.1rem;
+
+        @include respond-to ("small_laptop") {
+            line-height: 1.2rem!important;
+            font-size: 1rem!important;
+            padding: 0.5rem 1.2rem!important;
+        }
 }
 
 

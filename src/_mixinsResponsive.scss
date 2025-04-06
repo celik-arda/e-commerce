@@ -1,0 +1,9 @@
+@mixin respond-to ($device_screen) {
+    
+    @if $device_screen == "small_laptop" {
+
+        @media screen and (min-width: 1200px) and (max-width: 1400px) {
+            @content;
+        }
+    }
+}

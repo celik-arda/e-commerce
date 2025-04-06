@@ -1,23 +1,26 @@
-button {
+.product_button {
   background-color: transparent;
   text-align: center;
-  color: white;
+  color: #344451;
+  font-weight: 500;
   line-height: 1.5rem;
   font-size: 1.2rem;
   padding: 0.8rem 1.4rem;
-  border: 0.2em solid #01c164;
-  color: #01c164;
+  border: 0.2em solid #1E90FF;
+  color: #1E90FF;
   border-radius: 2.2rem;
-}
-button:hover {
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
   -webkit-transition-duration: 350ms;
           transition-duration: 350ms;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
+}
+.product_button:hover {
   color: white;
-  background-color: #01c164;
+  background-color: #1E90FF;
+  -webkit-box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
+          box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
 }
 
 .thumbnail_container {
@@ -34,34 +37,50 @@ button:hover {
 }
 
 .item_title {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   margin: 0px auto;
-  color: #01c164;
-  font-size: 1.7em;
+  color: #1E90FF !important;
+  font-size: 1.8em;
   padding: 0px;
   text-align: center;
 }
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .item_title {
+    font-size: 1rem;
+  }
+}
 .item_title h3 {
   display: inline-block;
-  position: absolute;
-  top: 0;
   margin-top: 0;
+  color: #1E90FF !important;
 }
 
 .item_price {
-  color: #01c164;
-  font-size: 1.7em;
+  color: #1E90FF !important;
+  font-size: 1.8em;
   padding: 0px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .item_price {
+    font-size: 1rem;
+  }
 }
 
-button {
+.product_button {
   line-height: 1.7rem;
   font-size: 1rem;
   padding: 0.5rem 2.1rem;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .product_button {
+    line-height: 1.2rem !important;
+    font-size: 1rem !important;
+    padding: 0.5rem 1.2rem !important;
+  }
 }/*# sourceMappingURL=SingleProduct.module.css.map */

@@ -1,32 +1,59 @@
 @import '../../variables';
+@import '../../mixinsResponsive';
 
 .numbers_container {
-    @extend %centered_flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     margin: 2rem auto 3.8rem auto;
     column-gap: 3em;
+    gap: 14%;
 
     .numbers_card {
-        width: 100%;
-        background-color: black;
+        width: 26%;
+        background-color: $card_background;
         display: grid;
-        grid-template-rows: 6fr 6fr;
+        grid-template-rows: 4fr 9fr;
+        align-content: space-between;
         text-align: center;
-        padding: 3.8em;
-        gap: 1rem;
-        flex-grow: 1;
-        flex: 1;
+        padding: 2rem;
+        flex: 1, 1, 1;
         border-radius: 3em;
+        aspect-ratio: 10 / 6;
 
+
+        @include respond-to("small_laptop") {
+            background-color: $card_background;
+            display: grid;
+            grid-template-rows: 4fr 6fr;
+            align-content: start;
+            text-align: center;
+            padding: 1rem;
+            gap: 1rem;
+            flex: 1, 1, 1;
+            border-radius: 3em;
+        }
 
         .number {
             font-size: 2.7rem;
             font-weight: 600;
+
+            @include respond-to ("small_laptop") {
+                font-size: 2.5rem;
+            }
         }
 
         .number_text {
-            font-size: 2.5em;
+            font-size: 2.7em;
             color: $text-regular;
+            line-height: 100%;
+            margin: 0 auto;
+
+            @include respond-to ("small_laptop") {
+                font-size: 2.4em;
+                line-height: 100%;
+            }
         }
     }
 }

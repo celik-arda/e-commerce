@@ -21,6 +21,8 @@
         // select collection named products in firestore //
         const productsRef = collection(db, "products");
 
+        const [selectListValue, setSelectListValue] = useState();
+
         let contextVariables = useContext(MyAllContext);
         
         if(!contextVariables){
@@ -28,8 +30,12 @@
             return <div>loading context...</div>
         }
         
-        const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts, listResult, setListResult} = contextVariables;
-        
+        const {searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, setListResult} = contextVariables;
+
+        const handleSortinProductList = (e: any) => {
+
+            setSelectListValue(e.target.value);
+        }        
         useEffect(() => {
         
             if(searchBarValue !== ""){
@@ -39,7 +45,6 @@
         
         },[searchBarValue]);
         
-
 
         return (
 
@@ -51,11 +56,15 @@
 
                     {searchResultVisible && <SearchResults />}
 
-
                 </div>
                 <div className={style.filter_area}>
-                    <form>
-                        <input placeholder='filter product' />
+                    <form className={style.sort_form_area}>
+
+                        <select value={selectListValue} onChange={handleSortinProductList}>
+                            <option value="lowToHigh">Price: Low to High</option>
+                            <option value="highToLow">Price: High to Low</option>
+                        </select>
+                        <img src='/sort_product_icon_.png' />
                     </form>
                 </div>
 

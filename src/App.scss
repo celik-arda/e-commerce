@@ -2,8 +2,19 @@
 
 
 
-// Importing main variables for App.css //
-@import '_variables.scss';
+// Importing variables and screen-mixins for App.css //
+@import 'variables.scss';
+@import 'mixinsResponsive.scss';
+
+:root div,
+:root h1,
+:root h2,
+:root h3,
+:root h4,
+:root p {
+
+    color: $text_regular;
+}
 
 body {
     font-size: 62.5%;
@@ -17,20 +28,38 @@ body {
 
 
 .page_container {
-    background: repeating-linear-gradient(20deg, #01180e 600px, #034524 900px, #01180e 1550px);
+    background: repeating-linear-gradient(200deg, #437DB0 300px, #091A2F 900px, #437DB0 1150px);
     width: 88vw;
-    padding: 2vh 6vw;
-    height: fit-content;
+    padding: 2vh 6vw 40vh 6vw;
     min-height: 96vh;
+    height: fit-content;
 
     button {
-        @extend %button_dark;
+        @extend %button_regular;
+
+        @include respond-to ("small_laptop") {
+            line-height: 1.3rem;
+            font-size: 1.1rem;
+            padding: 0.7rem 1.2rem;
+        }
     }
 }
 
 form {
     input {
         font-size: 1.5rem;
+        background-color: $text_regular!important;
+        color: $card_background!important;
+        padding: 0.8rem 0.6rem;
+        border-radius: 0.7rem;
+
+        @include respond-to ("small_laptop") {
+            font-size: 1.3rem;
+            padding: 0.6rem 0.4rem;
+        }
+    }
+
+    label {
+        color: $text_regular;
     }
 }
-

@@ -53,6 +53,9 @@ const SignIn = () => {
         return (
             <div className={style.login_form_container}>
                 <form className={style.form_area}>
+
+                    <h2>Signin</h2>
+
                     <label htmlFor="login_name_input">Your Mail</label>
                     <input 
                     id="login_name_input"
@@ -62,6 +65,7 @@ const SignIn = () => {
                     title='email' type='email'  
                     placeholder='your email adress'
                     />
+                
                     <label htmlFor='login_password_input'>Your Password</label>
                     <input 
                     id="login_password_input"
@@ -71,18 +75,16 @@ const SignIn = () => {
                     title='password' type='password'  
                     placeholder='your password'
                     />
+                
                     <button 
                     type='submit' 
                     onClick={handleLoginForm}>
                         Login
                     </button>
+                
                     <NavLink to='/forgot_password' >Forgot my password</NavLink>
+
                 </form>
-
-                {/* <Routes>
-                    <Route path='/forgot_password' element={<ForgotPassword />} />
-                </Routes> */}
-
             </div>
         )
     }

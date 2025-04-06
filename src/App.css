@@ -1,23 +1,35 @@
 .page_container button {
   background-color: transparent;
   text-align: center;
-  color: white;
+  color: #344451;
+  font-weight: 500;
   line-height: 1.5rem;
   font-size: 1.2rem;
   padding: 0.8rem 1.4rem;
-  border: 0.2em solid #01c164;
-  color: #01c164;
+  border: 0.2em solid #1E90FF;
+  color: #1E90FF;
   border-radius: 2.2rem;
-}
-.page_container button:hover {
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
   -webkit-transition-duration: 350ms;
           transition-duration: 350ms;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
+}
+.page_container button:hover {
   color: white;
-  background-color: #01c164;
+  background-color: #1E90FF;
+  -webkit-box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
+          box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
+}
+
+:root div,
+:root h1,
+:root h2,
+:root h3,
+:root h4,
+:root p {
+  color: #344451;
 }
 
 body {
@@ -34,14 +46,35 @@ body {
 }
 
 .page_container {
-  background: repeating-linear-gradient(20deg, #01180e 600px, #034524 900px, #01180e 1550px);
+  background: repeating-linear-gradient(200deg, #437DB0 300px, #091A2F 900px, #437DB0 1150px);
   width: 88vw;
-  padding: 2vh 6vw;
+  padding: 2vh 6vw 40vh 6vw;
+  min-height: 96vh;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 96vh;
 }
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .page_container button {
+    line-height: 1.3rem;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
 form input {
   font-size: 1.5rem;
+  background-color: #344451 !important;
+  color: #F5F5F4 !important;
+  padding: 0.8rem 0.6rem;
+  border-radius: 0.7rem;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  form input {
+    font-size: 1.3rem;
+    padding: 0.6rem 0.4rem;
+  }
+}
+form label {
+  color: #344451;
 }/*# sourceMappingURL=App.css.map */
