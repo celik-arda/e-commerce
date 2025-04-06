@@ -2,8 +2,6 @@ import style from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 import AuthButtonContainer from '../../layouts/authButtonsContainer/AuthButtonContainer';
 
-// importing hero_section_image from public //
-// import hero_image from '../../../public/hero_section_img_rendered.jpg';
 
 const Header = () => {
     return (
@@ -19,7 +17,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className={style.hero_right_side}>
-                    <img className={style.hero_image} src={'/hero_section_img_rendered.jpg'} alt='heroImage' />          
+                    <img className={style.hero_image} src={'/hero_section_img_rendered.jpg'} alt='heroImage' />
                 </div>
             </div>
         </div>

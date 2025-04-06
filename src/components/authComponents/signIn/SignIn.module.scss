@@ -15,18 +15,33 @@
         height: 28rem;
     }
 
+    @include respond-to("tablet_device") {
+        margin: 5rem auto 2rem auto;
+        width: 30rem;
+        height: 38rem;
+    }
+
     .form_area {
         width: 100%;
         height: 100%;
         margin: 0 auto;
         display: grid;
+        grid-template-columns: 1fr;
         grid-template-rows:6fr 4fr 6fr 4fr 6fr 6fr 2fr;
         justify-items: center;
+
+        @include respond-to("tablet_device") {
+            grid-template-rows: 6fr 3fr 6fr 3fr 6fr 6fr 2fr;
+        }
 
         h2 {
             margin: 0 auto;
             font-size: 1.9rem;
             color: $button_color;
+
+            @include respond-to("tablet_device") {
+                font-size: 2.4rem;
+            }
         }
 
         label {
@@ -41,6 +56,12 @@
         input {
 
             @extend %auth_pages_input;
+
+            @include respond-to("tablet_device") {
+                font-size: 1.5rem!important;
+                width: 90%;
+            }
+
         }
 
         .login_name_input {
@@ -54,6 +75,11 @@
         button {
             width: 15rem;
             margin: 0.5rem auto;
+
+            @include respond-to("tablet_device") {
+                width: 13.5rem;
+                margin: 1.1rem auto;
+            }
         }
 
         a {
@@ -61,6 +87,10 @@
             font-size: 1.1rem;
             font-weight: 600;
             justify-self: end;
+
+            @include respond-to("tablet_device") {
+                font-size: 1.3rem;
+            }
         }
     }
     

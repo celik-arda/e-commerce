@@ -24,6 +24,14 @@
     aspect-ratio: 100/8;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .search_filter_container {
+    padding: 1rem 2.3rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .search_filter_container .search_area {
   position: relative;
   display: -webkit-box;
@@ -79,6 +87,11 @@
     padding: 0.6rem 3.3rem 0.6rem 0.6rem;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .search_filter_container .sort_form_area select {
+    font-size: 1.1rem;
+  }
+}
 .search_filter_container .sort_form_area option {
   width: 100%;
   font-size: 1.3rem;
@@ -91,6 +104,12 @@
     border-radius: 25rem;
     font-size: 1rem;
     padding: 0.6rem 3.3rem 0.6rem 0.6rem;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .search_filter_container .sort_form_area option {
+    font-size: 0.9rem;
+    width: 80%;
   }
 }
 .search_filter_container .sort_form_area img {

@@ -17,6 +17,10 @@
         gap: 3%;
         padding-inline: 0;
         
+        @include respond-to ("tablet_device") {
+            grid-template-columns: repeat(3, 30%);
+        }
+
         .product_item {
             display: grid;
             background-color: $card_background;
@@ -33,6 +37,12 @@
             @include respond-to ("small_laptop") {
                 grid-template-rows: 5fr 7fr 5fr 4fr;
             }
+
+            @include respond-to ("tablet_device") {
+                padding: 1rem 0.5rem;
+                grid-template-rows: 5fr 7fr 5fr 4fr;
+            }
+
         }
     }
 
