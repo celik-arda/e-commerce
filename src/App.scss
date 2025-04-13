@@ -34,6 +34,11 @@ body {
     min-height: 96vh;
     height: fit-content;
 
+    @include respond-to ("smartphone") {
+        width: 94vw;
+        padding: 2vh 3vw 40vh 3vw; 
+    }
+
     button {
         @extend %button_regular;
 
@@ -42,6 +47,7 @@ body {
             font-size: 1.1rem;
             padding: 0.7rem 1.2rem;
         }
+
     }
 }
 
@@ -56,6 +62,10 @@ form {
         @include respond-to ("small_laptop") {
             font-size: 1.3rem;
             padding: 0.6rem 0.4rem;
+        }
+        @include respond-to ("tablet_device") {
+            font-size: 1.1rem;
+            padding: 0.8rem 0.4rem;
         }
     }
 
