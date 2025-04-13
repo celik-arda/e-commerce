@@ -1,0 +1,83 @@
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  .dropdown_on {
+    width: 100%;
+    padding: 0 1em 1em 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 0px;
+    max-height: 225px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    gap: 1em;
+    background-color: #F5F5F4;
+    -webkit-animation-name: dropdown;
+            animation-name: dropdown;
+    -webkit-animation-duration: 400ms;
+            animation-duration: 400ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+  }
+  @-webkit-keyframes dropdown {
+    0% {
+      opacity: 0;
+      height: 0em;
+    }
+    25% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+      height: 21.3em;
+    }
+    75% {
+      opacity: 0.5;
+      height: 21.3em;
+    }
+    100% {
+      opacity: 1;
+      height: 21.3em;
+    }
+  }
+  @keyframes dropdown {
+    0% {
+      opacity: 0;
+      height: 0em;
+    }
+    25% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+      height: 21.3em;
+    }
+    75% {
+      opacity: 0.5;
+      height: 21.3em;
+    }
+    100% {
+      opacity: 1;
+      height: 21.3em;
+    }
+  }
+  .dropdown_on a {
+    width: 100%;
+    font-size: 1.8em;
+  }
+  .dropdown_on a .dropdown_options {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+  }
+}/*# sourceMappingURL=NavbarDropdownMenu.module.css.map */
