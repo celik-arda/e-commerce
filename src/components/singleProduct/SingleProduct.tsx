@@ -1,6 +1,4 @@
-import { useContext } from 'react';
 import style from './SingleProduct.module.css'
-import MyAllContext from '../../contextProviders/MyContextProvider.tsx';
 import {AllProducts} from '../../models/Product.tsx';
 import { NavLink } from 'react-router-dom';
  
@@ -24,7 +22,7 @@ const SingleProduct = ({ item }: {item: AllProducts | undefined}) => {
                                 <h3 className={style.item_title}>{item.title}</h3>
                         </div>
                         <div>
-                                <h3 className={style.item_price}>{item.price}</h3>
+                                <h3 className={style.item_price}>{item.price} £ </h3>
                         </div>
                         <div>
                             <NavLink  to={`/product/${item.id}`}>
