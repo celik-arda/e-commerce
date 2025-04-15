@@ -14,6 +14,15 @@
         gap: 5%;
     }
 
+    @include respond-to("smartphone") {
+        height: 54vh;
+        padding: 10em unset;
+        margin: 3.5em auto 3.5em auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1em;
+    }
+
     .numbers_card {
         width: 26%;
         background-color: $card_background;
@@ -46,6 +55,16 @@
 
         }
 
+        @include respond-to("smartphone") {
+            width: 100%;
+            height: 26%;
+            flex: 1;
+            box-sizing: border-box;
+            padding: 1em;
+            border-radius: 1em;
+            
+        }
+
         .number {
             font-size: 2.7rem;
             font-weight: 600;
@@ -56,6 +75,10 @@
 
             @include respond-to ("tablet_device") {
                 font-size: 1.9rem;
+            }
+
+            @include respond-to ("smartphone") {
+                font-size: 3.4em;
             }
         }
 
@@ -71,6 +94,10 @@
             @include respond-to ("tablet_device") {
                 font-size: 1.3rem;
                 line-height: 90%;
+            }
+
+             @include respond-to ("smartphone") {
+                font-size: 2em;    
             }
         }
     }
