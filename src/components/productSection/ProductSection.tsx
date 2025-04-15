@@ -6,7 +6,7 @@ import { db } from '../../../firebase.tsx';
 import SingleProduct from '../singleProduct/SingleProduct.tsx';
 
 // Product class and AllProducts interface  //
-import { Product, AllProducts } from '../../models/Product.tsx'
+import { AllProducts } from '../../models/Product.tsx'
 
 // Static class to make UI operations  //
 import { UIprocess } from '../../models/UIprocess.tsx';
@@ -30,7 +30,6 @@ const ProductSection = () => {
     
     let getProductsFromFirestoreAndList = (collectionRef : any) => {
         
-
         UIprocess.getAllProductsAndList(collectionRef, setAllProducts);
 
         return allProducts;

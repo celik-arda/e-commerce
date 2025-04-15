@@ -24,6 +24,17 @@
         justify-content: space-between;
     }
 
+    @include respond-to ("smartphone") {
+        width: 100%;
+        height: 140px;
+        padding: 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        border-radius: 1em;
+    }
+
 
     .search_area {
         position: relative;
@@ -64,9 +75,11 @@
             
             @include respond-to("tablet_device") {
                 font-size: 1.1rem;
-                
-                // padding: 0.6rem 3.3rem 0.6rem 0.6rem;
-                // box-sizing: border-box;
+            }
+            @include respond-to ("smartphone") {
+                border-radius: 0.4em;
+                font-size: 1.8em;
+                padding-right: 4.2em;
             }
         }
 
@@ -84,10 +97,13 @@
             }
             
             @include respond-to("tablet_device") {
-                // box-sizing: border-box;
                 font-size: 0.9rem;
                 width: 80%;
-                // padding: 0;
+            }
+
+            @include respond-to ("smartphone") {
+                font-size: 0.8em;
+                // padding-right: 19em;
             }
         }
 

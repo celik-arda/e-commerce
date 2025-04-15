@@ -1,0 +1,68 @@
+// Only run this scss file in mobile screen! //
+
+@import '../../variables.scss';
+@import '../../mixinsResponsive';
+
+@include respond-to("smartphone") {
+
+    .dropdown_on {
+        width: 100%;
+        padding: 0 1em 1em 1em;
+        display: flex;
+        height: 0px;
+        max-height: 225px;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        gap: 1em;
+        background-color: $card_background;
+            animation-name: dropdown;
+            // animation-timing-function: ease-out;
+            animation-duration: 400ms;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+        // transition-property: display, height;
+        // transition-duration: 600ms;
+        // transition-delay: 600ms;
+
+    @keyframes dropdown{
+        0% {
+            opacity:0;
+            height: 0em;
+        }
+
+        25% {
+            opacity: 0;
+            // height: em;
+        }
+        50% {
+            opacity: 0.2;
+            height: 21.3em;
+        }
+        75% {
+            opacity: 0.5;
+            height: 21.3em;
+        }
+        100% {
+            opacity: 1;
+            height: 21.3em;
+        }
+    }
+
+        a {
+            width: 100%;
+            font-size: 1.8em;
+            
+            .dropdown_options {
+                width: 100%;
+                padding: 0.4rem;
+                font-size: 1.1rem;
+                border-radius: 0.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+
+    
+}

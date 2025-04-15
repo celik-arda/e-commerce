@@ -3,7 +3,7 @@
 
 .product_section {
     width: 88vw;
-    margin: 4rem auto;
+    margin: 2.2em auto;
     height: fit-content;
     max-height: max-content;
     display: flex;
@@ -13,7 +13,6 @@
         display: grid;
         grid-template-columns: repeat(4, 20%);
         justify-content: space-between;
-        align-items: space-between;
         gap: 3%;
         padding-inline: 0;
         
@@ -21,12 +20,16 @@
             grid-template-columns: repeat(3, 30%);
         }
 
+        @include respond-to("smartphone") {
+            gap: 1%;
+            grid-template-columns: repeat(2,48%);
+        }
+
         .product_item {
             display: grid;
             background-color: $card_background;
             padding: 2rem 1rem;
             grid-template-rows: 5fr 6fr 3fr 4fr;
-            // place-items: center;
             justify-items: center;
             align-content: space-between;
             max-height: 360px;
@@ -41,6 +44,11 @@
             @include respond-to ("tablet_device") {
                 padding: 1rem 0.5rem;
                 grid-template-rows: 5fr 7fr 5fr 4fr;
+            }
+
+            @include respond-to ("smartphone") {
+                padding: 1.2em 1.2em;
+                grid-template-rows: 5fr 8fr 6fr 2fr;
             }
 
         }

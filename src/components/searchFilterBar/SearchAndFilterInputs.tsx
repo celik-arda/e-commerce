@@ -3,9 +3,6 @@
     import MyAllContext from '../../contextProviders/MyContextProvider';
     import SearchResults from '../../components/searchFilterBarResults/SearchResults'
 
-    //  Inheritance-Based Objects //
-    import { Product } from '../../models/Product'
-
     // Utils Functions //
     import { searchTheProducts } from '../../utils/helpers/search-products'
     // (END) Utils Functions //

@@ -5,7 +5,6 @@
         display: flex;
         justify-content: center;
         
-
         .product_thumbnail {
             width: 74%;
             background-color: transparent;
@@ -14,7 +13,6 @@
         
 .item_title {
         display: flex;
-        // justify-content: start;
         align-items: start;
         margin: 0px auto;
         color: $button_color!important;
@@ -23,17 +21,16 @@
         text-align: center;
 
         @include respond-to ("small_laptop") {
-                font-size: 1rem
+                font-size: 1rem;
+        }
+        @include respond-to ("smartphone") {
+                font-size: 1.5em;
         }
 
         h3 {
                 display: inline-block;
                 margin-top: 0;
                 color: $button_color!important;
-                
-                // @include respond-to ("small_laptop") {
-
-                // }
         }
 }
 
@@ -45,7 +42,9 @@
 
         @include respond-to ("small_laptop") {
                 font-size: 1rem;
-                // line-height: 100%;
+        }
+        @include respond-to ("smartphone") {
+                font-size: 0.9rem;
         }
 }
 

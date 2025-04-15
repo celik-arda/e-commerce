@@ -1,21 +1,25 @@
 @import '../../variables.scss';
-
+@import '../../mixinsResponsive.scss';
 
 .header_menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     
     .site_name {
         display: flex;
         justify-content: space-between;
         gap: 1.5em;
+
+        @include respond-to("smartphone") {
+            display: none;
+        }
         
         span {
             display: flex;
             align-items: center;
         }
-        
     }
     
     .nav_container {
@@ -30,9 +34,72 @@
         a {
             display: inline-block;
             font-size: 2em;
-            color: white;
+            color: $card_background;
+        }
+
+        @include respond-to("smartphone") {
+            display: none;
         }
     }
+
+    @include respond-to("smartphone") {
+
+        .mobile_burger_menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: fit-content;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            .nav_container_mobile {
+
+                    .mobile_website_name {
+                        color: $card_background;
+                        margin: 0.4rem auto 0.6rem auto;
+                    }
+            }
+
+        .dropdown_menu {
+            width: 100%;
+            height: fit-content;
+            padding: none;
+            overflow: hidden;
+            border-radius: 0.5rem;
+
+                // Menu dropdown button for mobile //
+            .dropdown_off {
+                width: 100%;
+                padding: 1em 1em 1em 1em ;
+                background-color: $card_background;
+                border-radius: 0.5rem 0.5rem unset unset;
+                font-weight: bold;
+                text-align: center;
+                box-sizing: border-box;
+
+                .dropdown_button {
+                    border-radius: 0.5rem;
+                    font-size: 1.8em;
+                    padding: 0.4em;
+                    width: 100%;
+                    font-weight: bold;
+                    // margin-bottom: 0.5em;
+                }
+                    
+                a {
+                    line-height: 100%;
+                    font-size: 1.8em;
+                    text-align: center;
+                    display: inline-block;
+                    width: 100%;
+                    color: $text_regular;
+                }
+            }
+
+        }
+        }
+    }
+
 }
-
-
