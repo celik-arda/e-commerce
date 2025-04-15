@@ -67,6 +67,11 @@ form {
             font-size: 1.1rem;
             padding: 0.8rem 0.4rem;
         }
+
+        @include respond-to ("smartphone") {
+            font-size: 1.8em;
+            border-radius: 0.5em;
+        }
     }
 
     label {

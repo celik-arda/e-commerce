@@ -87,6 +87,12 @@ form input {
     padding: 0.8rem 0.4rem;
   }
 }
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  form input {
+    font-size: 1.8em;
+    border-radius: 0.5em;
+  }
+}
 form label {
   color: #344451;
 }/*# sourceMappingURL=App.css.map */
