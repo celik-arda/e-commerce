@@ -42,6 +42,6 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#01180e), to(#034524));
-  background-image: linear-gradient(to top, #01180e, #034524);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#091A2F), to(#437DB0));
+  background-image: linear-gradient(to top, #091A2F, #437DB0);
 }/*# sourceMappingURL=HomePage.module.css.map */

@@ -28,7 +28,7 @@
 }
 .basket_container .list_area {
   padding: 0.5rem 1rem 0.5rem 1rem;
-  background-color: #00190e;
+  background-color: #09253F;
   border-radius: 1.2rem;
   overflow-y: hidden;
   height: 40vh;
@@ -125,7 +125,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0.4rem 6rem 0.4rem 5.3rem;
-  background-color: #01180e;
+  background-color: #091A2F;
   border-radius: 1rem;
   margin-top: 0.8rem;
 }
@@ -179,7 +179,7 @@
 }
 .basket_container .button_area {
   margin-top: 0.6rem;
-  background-color: #01180e;
+  background-color: #091A2F;
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
