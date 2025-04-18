@@ -18,12 +18,10 @@ const SearchResults = () => {
     
     
     if (!contextVariables){
-        console.log("sonuçlar yükleniyor...")
         return <div>sonuçlar yükleniyor...</div>;
     }
 
-    const {auth, user, isLogging, loadingState, setLoadingState, searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, allProducts, setAllProducts, listResult, setListResult} = contextVariables;
-
+    const {searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, listResult} = contextVariables;
 
 
     // pick the result-box as a useRef Element //
@@ -31,59 +29,70 @@ const SearchResults = () => {
     
     // add click event with useRef to make result-toggle-off //
     useEffect(() => {
-            
-            if (searchBarValue !== ""){
-        
-                const handleClickOutsideOrNot = (e: Event) => {
 
-                    // First, check type of "e.target" for TS //
-                    // contains() method needs exact type in TS
-                    if (e.target instanceof Node) {
-                        
-                        // if clicked outside of box, toggle off //
-                        if (toggleResultBox.current &&  !toggleResultBox.current.contains(e.target)) {
-                            setSearchResultVisible(false);
-                        }
-                        else {
-                            setSearchResultVisible(true);
-                        }
-                    }
-                }
-                
-                document.addEventListener("click", handleClickOutsideOrNot);
-                
-                return () => {
-                    document.removeEventListener("click", handleClickOutsideOrNot);
-        
-                }
-            }
-            else {
+    if (searchBarValue.trim() !== "") {
+        let allowClose = false;
+
+        const timer = setTimeout(() => {
+            allowClose = true;
+        }, 100); // At first time, prevent closing //
+
+        const handleClickOutsideOrNot = (e: MouseEvent) => {
+            if (!allowClose) return;
+
+            if (e.target instanceof Node) {
+                if (toggleResultBox.current && !toggleResultBox.current.contains(e.target)) {
                     setSearchResultVisible(false);
                 }
-                
-    },[searchBarValue]);
+            }
+        };
+
+        document.addEventListener("click", handleClickOutsideOrNot);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutsideOrNot);
+            clearTimeout(timer);
+        };
+    } else {
+        setSearchResultVisible(false);
+    }
+}, [searchBarValue]);
 
 
-        return (
+
+    // If a word was written but there is no product found //
+    // if (searchResultVisible && listResult.length === 0) {
+    //     return (
+    //             <span className={style.no_result_area}>
+    //                 <h2 className={style.no_result_text}>No result</h2>
+    //             </span>
+    //     );
+    // }
+
+    // A word was searched and some products was found  //
+    return (
             
-            <ul ref={toggleResultBox} className={style.search_results_active}>
-                {
-                listResult.map((product, index) => (
-                    <li key={index} className={style.result_list_item}>
-                        <div className={style.thumb_container}>
-                            <img className={style.result_thumb} src={product.thumbnail} alt='results_image' />
-                        </div>
-                        <div className={style.result_title}>
-                            {product.title}
-                        </div>
-                        <div className={style.result_price}>
-                            {product.price} €
-                        </div>
-                    </li>
-                ))
-                }
-            </ul>
-        )
+        <ul ref={toggleResultBox} className={style.search_results_active}>
+
+            {
+            listResult.map((product, index) => (
+                    
+                <li key={index} className={style.result_list_item}>
+                    <div className={style.thumb_container}>
+                        <img className={style.result_thumb} src={product.thumbnail} alt='results_image' />
+                    </div>
+                    <div className={style.result_title}>
+                        {product.title}
+                    </div>
+                    <div className={style.result_price}>
+                        {product.price} £
+                    </div>
+                </li>
+
+            ))
+            }
+        </ul>
+    )
 }
 
 export default SearchResults

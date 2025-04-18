@@ -1,16 +1,16 @@
-    import { useState, useContext, useEffect, useRef} from 'react';
+    import { useState, useContext, useEffect} from 'react';
     import style from './SearchAndFilterInputs.module.css'
     import MyAllContext from '../../contextProviders/MyContextProvider';
     import SearchResults from '../../components/searchFilterBarResults/SearchResults'
 
     // Utils Functions //
     import { searchTheProducts } from '../../utils/helpers/search-products'
-    // (END) Utils Functions //
+
 
     //  Firebase Variables And Hooks //
     import {collection} from 'firebase/firestore'
     import {db} from '../../../firebase'
-    //  (END) Firebase Variables And Hooks //
+
 
 
     const SearchAndFilterInputs = () => {
@@ -23,23 +23,33 @@
         let contextVariables = useContext(MyAllContext);
         
         if(!contextVariables){
-            console.log("context yükleniyor...")
             return <div>loading context...</div>
         }
         
         const {searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, setListResult} = contextVariables;
 
-        const handleSortinProductList = (e: any) => {
+        const handleSortingProductList = (e: any) => {
 
             setSelectListValue(e.target.value);
-        }        
+        }
+
         useEffect(() => {
         
-            if(searchBarValue !== ""){
-                setSearchResultVisible(true);
-                searchTheProducts(searchBarValue, setListResult, productsRef);
+            const trimmed = searchBarValue.trim();
+    
+            if (trimmed !== "") {
+                searchTheProducts(trimmed, setListResult, productsRef);
+
+                if (!searchResultVisible) {
+                    setSearchResultVisible(true);
+                }
             }
-        
+            else {
+                if (searchResultVisible) {
+                    setSearchResultVisible(false);
+            }
+    }
+
         },[searchBarValue]);
         
 
@@ -57,7 +67,7 @@
                 <div className={style.filter_area}>
                     <form className={style.sort_form_area}>
 
-                        <select value={selectListValue} onChange={handleSortinProductList}>
+                        <select value={selectListValue} onChange={handleSortingProductList}>
                             <option value="lowToHigh">Price: Low to High</option>
                             <option value="highToLow">Price: High to Low</option>
                         </select>
@@ -66,7 +76,6 @@
                 </div>
 
             </div>
-
         )
     }
 
