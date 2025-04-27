@@ -20,10 +20,19 @@
             display: flex;
             align-items: center;
         }
+
+        h1 {
+            color: $card_background;
+        }
     }
     
     .nav_container {
+        display: block!important;
         
+        @include respond-to("smartphone") {
+            display: none!important;
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -37,9 +46,10 @@
             color: $card_background;
         }
 
-        @include respond-to("smartphone") {
-            display: none;
-        }
+    }
+
+    .mobile_burger_menu {
+        display: none;
     }
 
     @include respond-to("smartphone") {
@@ -63,13 +73,15 @@
             }
 
         .dropdown_menu {
+            display: block;
             width: 100%;
             height: fit-content;
             padding: none;
             overflow: hidden;
             border-radius: 0.5rem;
 
-                // Menu dropdown button for mobile //
+
+            // Dropdown menu button for mobile //
             .dropdown_off {
                 width: 100%;
                 padding: 1em 1em 1em 1em ;

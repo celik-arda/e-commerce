@@ -31,6 +31,17 @@
       -ms-flex-align: center;
           align-items: center;
 }
+.header_menu .site_name h1 {
+  color: #F5F5F4;
+}
+.header_menu .nav_container {
+  display: block !important;
+}
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  .header_menu .nav_container {
+    display: none !important;
+  }
+}
 .header_menu .nav_container .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,10 +59,8 @@
   font-size: 2em;
   color: #F5F5F4;
 }
-@media screen and (min-width: 350px) and (max-width: 500px) {
-  .header_menu .nav_container {
-    display: none;
-  }
+.header_menu .mobile_burger_menu {
+  display: none;
 }
 @media screen and (min-width: 350px) and (max-width: 500px) {
   .header_menu .mobile_burger_menu {
@@ -81,6 +90,7 @@
     margin: 0.4rem auto 0.6rem auto;
   }
   .header_menu .mobile_burger_menu .dropdown_menu {
+    display: block;
     width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
