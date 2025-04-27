@@ -2,10 +2,8 @@
 import { useState, useEffect, useContext } from 'react';
 import style from './SignIn.module.css';
 import MyAllContext from '../../../contextProviders/MyContextProvider.tsx';
-import { Navigate, NavLink, Routes, Route } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 
-// Components
-import ForgotPassword from '../forgotPassword/ForgotPassword.tsx';
 
 // Firebase Auth and SignIn Hook Import //
 import { auth } from '../../../../firebase.tsx';
@@ -26,7 +24,7 @@ const SignIn = () => {
         return <div>Context undefined </div>
     }
 
-    const {auth, user} = contextVariables;
+    const {auth} = contextVariables;
     
     const handleLoginForm = async (e: any) => {
         
@@ -35,7 +33,6 @@ const SignIn = () => {
         await signInWithEmailAndPassword(auth, email, password)
         .then(credentials => {
             
-            const loginResponse = credentials.user;
             setRedirect(true);
         })
         .catch(() => {
@@ -51,14 +48,14 @@ const SignIn = () => {
     }
     else {
         return (
-            <div className={style.login_form_container}>
+            <div className={style.login_form_container} id="signin_form_page">
                 <form className={style.form_area}>
 
                     <h2>Signin</h2>
 
-                    <label htmlFor="login_name_input">Your Mail</label>
+                    <label htmlFor="login_name">Your Mail</label>
                     <input 
-                    id="login_name_input"
+                    id="login_name"
                     className={style.login_name_input} 
                     value={email} 
                     onChange={e => setEmail(e.target.value)} 
@@ -66,9 +63,9 @@ const SignIn = () => {
                     placeholder='your email adress'
                     />
                 
-                    <label htmlFor='login_password_input'>Your Password</label>
+                    <label htmlFor='login_password'>Your Password</label>
                     <input 
-                    id="login_password_input"
+                    id="login_password"
                     className={style.login_password_input} 
                     value={password} 
                     onChange={e => setPassword(e.target.value)} 
@@ -77,6 +74,7 @@ const SignIn = () => {
                     />
                 
                     <button 
+                    id="signin_page_button"
                     type='submit' 
                     onClick={handleLoginForm}>
                         Login
