@@ -115,7 +115,7 @@
   .search_filter_container .sort_form_area select {
     border-radius: 0.4em;
     font-size: 1.8em;
-    padding-right: 4.2em;
+    padding: 0.35em 3.7em 0.5em 0.5em;
   }
 }
 .search_filter_container .sort_form_area option {
@@ -152,4 +152,9 @@
   right: 0;
   bottom: 0;
   border-radius: 1rem;
+}
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  .search_filter_container .sort_form_area img {
+    top: 0;
+  }
 }/*# sourceMappingURL=SearchAndFilterInputs.module.css.map */
