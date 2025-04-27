@@ -14,8 +14,7 @@ import { AllProducts } from '../../models/Product';
 const EachProductDetail = () => {
     const [productLink, setProductLink] = useState<{[key: string]: string | undefined}>();
     const [selectedProduct, setSelectedProduct] = useState<AllProducts>();
-    const [userBasketItems, setUserBasketItems] = useState<AllProducts[]>([]);
-    
+
     let contextVariables = useContext(MyAllContext);
     
     

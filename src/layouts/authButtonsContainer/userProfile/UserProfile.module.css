@@ -17,7 +17,7 @@
   gap: 7rem;
 }
 .profile_page_container .user_pic_container {
-  background-color: black;
+  background-color: #F5F5F4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,7 +44,7 @@
   border-radius: 1.4rem;
 }
 .profile_page_container .user_info_container {
-  background-color: black;
+  background-color: #F5F5F4;
   height: 100%;
   max-height: 100%;
   padding: 3rem;
@@ -67,11 +67,12 @@
 }
 .profile_page_container .user_info_container .user_nickname h4,
 .profile_page_container .user_info_container .register_date h4 {
-  color: #344451;
+  color: #1E90FF;
   margin: 0 auto;
 }
 .profile_page_container .user_info_container .user_nickname h5,
 .profile_page_container .user_info_container .register_date h5 {
+  color: #344451;
   margin: 0 auto;
 }
 .profile_page_container .user_info_container .user_basket {
