@@ -1,4 +1,5 @@
 import {useState, useEffect, useContext, useRef} from 'react'
+import { NavLink } from 'react-router-dom'
 import style from './SearchResults.module.css'
 import MyAllContext from '../../contextProviders/MyContextProvider'
 import {db} from '../../../firebase'
@@ -59,16 +60,6 @@ const SearchResults = () => {
 }, [searchBarValue]);
 
 
-
-    // If a word was written but there is no product found //
-    // if (searchResultVisible && listResult.length === 0) {
-    //     return (
-    //             <span className={style.no_result_area}>
-    //                 <h2 className={style.no_result_text}>No result</h2>
-    //             </span>
-    //     );
-    // }
-
     // A word was searched and some products was found  //
     return (
             
@@ -82,10 +73,10 @@ const SearchResults = () => {
                         <img className={style.result_thumb} src={product.thumbnail} alt='results_image' />
                     </div>
                     <div className={style.result_title}>
-                        {product.title}
+                        <NavLink to={`/product/${product.id}`}>{product.title}</NavLink>
                     </div>
                     <div className={style.result_price}>
-                        {product.price} £
+                        <NavLink to={`/product/${product.id}`}>{product.price} £</NavLink >
                     </div>
                 </li>
 
