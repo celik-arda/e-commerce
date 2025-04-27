@@ -19,8 +19,6 @@
 .page_container button:hover {
   color: white;
   background-color: #1E90FF;
-  -webkit-box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
-          box-shadow: 0 0 2px #1E90FF, 0 0 2.5px #66B7FF;
 }
 
 :root div,
@@ -67,6 +65,14 @@ body {
     padding: 0.7rem 1.2rem;
   }
 }
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  .page_container button {
+    line-height: 1rem;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-width: 0.1em;
+  }
+}
 
 form input {
   font-size: 1.5rem;
@@ -91,6 +97,16 @@ form input {
   form input {
     font-size: 1.8em;
     border-radius: 0.5em;
+    padding: 0.5rem 0.3rem !important;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  form input#signup_email,
+  form input#signup_password,
+  form input#login_name,
+  form input#login_password {
+    width: 86%;
+    font-size: 1.6em;
   }
 }
 form label {

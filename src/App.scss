@@ -12,7 +12,6 @@
 :root h3,
 :root h4,
 :root p {
-
     color: $text_regular;
 }
 
@@ -26,7 +25,6 @@ body {
     box-sizing: border-box;
 }
 
-
 .page_container {
     background: repeating-linear-gradient(200deg, #437DB0 300px, #091A2F 900px, #437DB0 1150px);
     width: 88vw;
@@ -39,6 +37,7 @@ body {
         padding: 2vh 3vw 40vh 3vw; 
     }
 
+    // only regular buttons //
     button {
         @extend %button_regular;
 
@@ -47,11 +46,20 @@ body {
             font-size: 1.1rem;
             padding: 0.7rem 1.2rem;
         }
+        
+        @include respond-to ("smartphone") {
+            line-height: 1rem;
+            font-size: 1rem;
+            padding: 0.6rem 1rem;
+            border-width: 0.1em;
 
+        }
     }
+    
 }
 
 form {
+    // inputs except auth pages //
     input {
         font-size: 1.5rem;
         background-color: $text_regular!important;
@@ -67,12 +75,26 @@ form {
             font-size: 1.1rem;
             padding: 0.8rem 0.4rem;
         }
-
         @include respond-to ("smartphone") {
             font-size: 1.8em;
             border-radius: 0.5em;
+            padding: 0.5rem 0.3rem!important;
         }
     }
+
+    // inputs only in auth pages //
+    input#signup_email,
+    input#signup_password,
+    input#login_name,
+    input#login_password {
+        
+        @include respond-to("smartphone") {
+            width: 86%;
+            font-size: 1.6em;
+            // padding: 0.5rem 0.3rem!important;
+        }
+    }
+
 
     label {
         color: $text_regular;
