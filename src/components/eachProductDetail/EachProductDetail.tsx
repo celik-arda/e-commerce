@@ -85,7 +85,7 @@ const EachProductDetail = () => {
                     {selectedProduct.description}
                 </div>
                 <div className={style.price_and_buttons}>
-                    <h3>{selectedProduct.price}<span> €</span></h3>
+                    <h3>{selectedProduct.price}<span> £</span></h3>
                     <button onClick={handleToSaveProductInBasket}>Add To Basket</button>
                 </div>
             </div>
