@@ -169,10 +169,6 @@
             @include respond-to("smartphone") {
                 display: none!important;
             }
-
-            button {
-                width: 7rem;
-            }
         }
     }
 

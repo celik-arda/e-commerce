@@ -201,9 +201,6 @@
     display: none !important;
   }
 }
-.hero_section .hero_left_side .hero_buttons button {
-  width: 7rem;
-}
 .hero_section .hero_right_side {
   position: relative;
   display: -webkit-box;
