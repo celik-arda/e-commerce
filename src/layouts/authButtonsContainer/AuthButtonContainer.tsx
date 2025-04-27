@@ -32,7 +32,7 @@ const AuthButtonContainer = () => {
                         <button className='button_dark' type='submit'>SignIn</button>
                     </NavLink>
                     <NavLink to='/signup'  >
-                        <button className='button_dark'>SignUp</button>
+                        <button className='hero_buttons'>SignUp</button>
                     </NavLink>
                 </>
             )
