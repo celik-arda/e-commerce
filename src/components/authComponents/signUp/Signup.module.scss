@@ -11,6 +11,7 @@
     box-sizing: border-box;
 
     @include respond-to("small_laptop") {
+        margin: 3rem auto 2rem auto;
         width:23rem;
         height: 28rem;
     }
@@ -20,6 +21,15 @@
         width: 30rem;
         height: 38rem;
         padding: 2rem 2rem 5.4rem 2rem;
+    }
+    @include respond-to("smartphone") {
+        // width: 20rem;
+        width: 100%;
+        height: 26rem;
+        padding: 1rem;
+        margin: 3rem auto 2rem auto;
+        border-radius: 1em;
+
     }
     
     .form_area {
@@ -35,6 +45,9 @@
             grid-template-rows: 6fr 3fr 6fr 3fr 6fr;
 
         }
+        @include respond-to("smartphone") {
+        grid-template-rows:6fr 4fr 6fr 4fr 6fr 6fr 2fr;
+        }
         
         h2 {
             margin: 0 auto;
@@ -48,7 +61,13 @@
             @include respond-to("tablet_device") {
                 font-size: 2.3rem;
             }
+
+            &.signup_form_title {
+                font-size: 1.4rem;
+            }
+        
         }
+
 
         label {
             font-size: 1.8rem;
@@ -56,6 +75,11 @@
 
             @include respond-to("small_laptop") {
                 font-size: 1.6rem;
+            }
+            @include respond-to("smartphone") {
+                font-size: 1.3rem;
+                display: flex;
+                align-items: center;
             }
         }
 
@@ -69,9 +93,16 @@
                 height: 61%;
                 padding: 0 0.4rem;
             }
+
+            &.input_area {
+
+                @include respond-to("smartphone") {
+
+                }
+            }
         }
         
-        button {
+        button#signup_page_button {
             margin: 1rem auto 0 auto;
             width: 14rem;
             height: 3.6rem;
@@ -80,6 +111,11 @@
                 margin: 0.7rem auto 0.4rem auto;
                 width: 13.5rem;
                 height: 4.1rem;
+            }
+            @include respond-to("smartphone") {
+                margin: 0.7rem auto 0.4rem auto;
+                width: 12rem;
+                height: 2.5rem;
             }
         }
 

@@ -62,7 +62,7 @@ const SignUp = () => {
             <div className={style.myform}>
                 <form className={style.form_area}>
 
-                    <h2>Create A New Account</h2>
+                    <h2 className={style.signup_form_title}>Create A New Account</h2>
                     
                     <label htmlFor='signup_email'>Your Mail</label>
                     <input 
@@ -85,7 +85,8 @@ const SignUp = () => {
                     placeholder='your password'
                     />
                     
-                    <button type='submit' onClick={handleSignUpForm}>Login</button>
+                    <button 
+                    id={style.signup_page_button} type='submit' onClick={handleSignUpForm}>Login</button>
                     
                 </form>
             </div>
