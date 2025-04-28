@@ -34,6 +34,11 @@ interface MyContextType {
     setUserAuthState: (newValue: boolean) => void,
     createdAccountTime: FieldValue | undefined,
     setCreatedAccountTime: (newValue: FieldValue | undefined) => void,
+    sortingPriceType: string,
+    setSortingPriceType: (newValue: string) => void,
+    // selectListValue: string,
+    // setSelectListValue: (newValue: string) => void,
+
 }
 
 
@@ -49,6 +54,8 @@ export const MyContextProvider = ({children}: {children: ReactNode}) => {
     const [searchResultVisible, setSearchResultVisible] = useState<boolean>(false);
     const [userAuthState, setUserAuthState] = useState<boolean>(false);
     const [createdAccountTime, setCreatedAccountTime] = useState<FieldValue | undefined>(undefined);
+    const [sortingPriceType, setSortingPriceType] = useState<string>("default");
+    // const [selectListValue, setSelectListValue] = useState(default);
     
     const myContext : MyContextType = {
 
@@ -69,6 +76,10 @@ export const MyContextProvider = ({children}: {children: ReactNode}) => {
         setUserAuthState,
         createdAccountTime,
         setCreatedAccountTime,
+        sortingPriceType,
+        setSortingPriceType,
+        // selectListValue,
+        // setSelectListValue,
     }
     
     return (

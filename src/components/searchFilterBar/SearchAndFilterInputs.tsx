@@ -1,4 +1,4 @@
-    import { useState, useContext, useEffect} from 'react';
+    import { useContext, useEffect} from 'react';
     import style from './SearchAndFilterInputs.module.css'
     import MyAllContext from '../../contextProviders/MyContextProvider';
     import SearchResults from '../../components/searchFilterBarResults/SearchResults'
@@ -18,23 +18,19 @@
         // select collection named products in firestore //
         const productsRef = collection(db, "products");
 
-        const [selectListValue, setSelectListValue] = useState();
-
         let contextVariables = useContext(MyAllContext);
         
         if(!contextVariables){
             return <div>loading context...</div>
         }
         
-        const {searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, setListResult} = contextVariables;
+        const {searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, setListResult, sortingPriceType, setSortingPriceType} = contextVariables;
 
         const handleSortingProductList = (e: any) => {
-
-            setSelectListValue(e.target.value);
+            setSortingPriceType(e.target.value);
         }
 
         useEffect(() => {
-        
             const trimmed = searchBarValue.trim();
     
             if (trimmed !== "") {
@@ -47,9 +43,8 @@
             else {
                 if (searchResultVisible) {
                     setSearchResultVisible(false);
+                }
             }
-    }
-
         },[searchBarValue]);
         
 
@@ -67,9 +62,10 @@
                 <div className={style.filter_area}>
                     <form className={style.sort_form_area}>
 
-                        <select value={selectListValue} onChange={handleSortingProductList}>
-                            <option value="lowToHigh">Price: Low to High</option>
-                            <option value="highToLow">Price: High to Low</option>
+                        <select value={sortingPriceType} onChange={handleSortingProductList}>
+                            <option value="toHigh">Price: Low to High</option>
+                            <option value="toLow">Price: High to Low</option>
+                            <option value="default">Sort Products</option>
                         </select>
                         <img src='/sort_product_icon_.png' />
                     </form>
