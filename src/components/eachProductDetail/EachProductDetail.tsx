@@ -14,8 +14,7 @@ import { AllProducts } from '../../models/Product';
 const EachProductDetail = () => {
     const [productLink, setProductLink] = useState<{[key: string]: string | undefined}>();
     const [selectedProduct, setSelectedProduct] = useState<AllProducts>();
-    const [userBasketItems, setUserBasketItems] = useState<AllProducts[]>([]);
-    
+
     let contextVariables = useContext(MyAllContext);
     
     
@@ -86,7 +85,7 @@ const EachProductDetail = () => {
                     {selectedProduct.description}
                 </div>
                 <div className={style.price_and_buttons}>
-                    <h3>{selectedProduct.price}<span> €</span></h3>
+                    <h3>{selectedProduct.price}<span> £</span></h3>
                     <button onClick={handleToSaveProductInBasket}>Add To Basket</button>
                 </div>
             </div>

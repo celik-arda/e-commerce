@@ -1,16 +1,16 @@
-    import { useState, useContext, useEffect, useRef} from 'react';
+    import { useContext, useEffect} from 'react';
     import style from './SearchAndFilterInputs.module.css'
     import MyAllContext from '../../contextProviders/MyContextProvider';
     import SearchResults from '../../components/searchFilterBarResults/SearchResults'
 
     // Utils Functions //
     import { searchTheProducts } from '../../utils/helpers/search-products'
-    // (END) Utils Functions //
+
 
     //  Firebase Variables And Hooks //
     import {collection} from 'firebase/firestore'
     import {db} from '../../../firebase'
-    //  (END) Firebase Variables And Hooks //
+
 
 
     const SearchAndFilterInputs = () => {
@@ -18,28 +18,33 @@
         // select collection named products in firestore //
         const productsRef = collection(db, "products");
 
-        const [selectListValue, setSelectListValue] = useState();
-
         let contextVariables = useContext(MyAllContext);
         
         if(!contextVariables){
-            console.log("context yükleniyor...")
             return <div>loading context...</div>
         }
         
-        const {searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, setListResult} = contextVariables;
+        const {searchBarValue, setSearchBarValue, searchResultVisible, setSearchResultVisible, setListResult, sortingPriceType, setSortingPriceType} = contextVariables;
 
-        const handleSortinProductList = (e: any) => {
+        const handleSortingProductList = (e: any) => {
+            setSortingPriceType(e.target.value);
+        }
 
-            setSelectListValue(e.target.value);
-        }        
         useEffect(() => {
-        
-            if(searchBarValue !== ""){
-                setSearchResultVisible(true);
-                searchTheProducts(searchBarValue, setListResult, productsRef);
+            const trimmed = searchBarValue.trim();
+    
+            if (trimmed !== "") {
+                searchTheProducts(trimmed, setListResult, productsRef);
+
+                if (!searchResultVisible) {
+                    setSearchResultVisible(true);
+                }
             }
-        
+            else {
+                if (searchResultVisible) {
+                    setSearchResultVisible(false);
+                }
+            }
         },[searchBarValue]);
         
 
@@ -57,16 +62,16 @@
                 <div className={style.filter_area}>
                     <form className={style.sort_form_area}>
 
-                        <select value={selectListValue} onChange={handleSortinProductList}>
-                            <option value="lowToHigh">Price: Low to High</option>
-                            <option value="highToLow">Price: High to Low</option>
+                        <select value={sortingPriceType} onChange={handleSortingProductList}>
+                            <option value="toHigh">Price: Low to High</option>
+                            <option value="toLow">Price: High to Low</option>
+                            <option value="default">Sort Products</option>
                         </select>
                         <img src='/sort_product_icon_.png' />
                     </form>
                 </div>
 
             </div>
-
         )
     }
 

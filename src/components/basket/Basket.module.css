@@ -55,9 +55,12 @@
   margin-bottom: 0.5rem;
   gap: 0.4rem;
   font-size: 1.1rem;
+  overflow: hidden;
+  border-radius: 0.7rem;
 }
 .basket_container .list_area ul li div {
-  background-color: black;
+  background-color: #F5F5F4 !important;
+  color: #1E90FF;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,9 +139,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: -flexstart;
+      -ms-flex-pack: -flexstart;
+          justify-content: -flexstart;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -146,12 +149,14 @@
 }
 .basket_container .basket_info_area .product_piece_area h4 {
   font-size: 1.2rem;
+  color: #F5F5F4;
 }
 .basket_container .basket_info_area .product_piece_area span {
   font-size: 1.5rem;
   font-weight: bold;
   color: #1E90FF;
   margin-right: 0.4rem;
+  text-shadow: 0 0 2px aquamarine;
 }
 .basket_container .basket_info_area .price_area {
   -webkit-box-flex: 3;
@@ -162,7 +167,7 @@
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -170,12 +175,14 @@
 .basket_container .basket_info_area .price_area h4 {
   display: block;
   font-size: 1.2rem;
+  color: #F5F5F4;
 }
 .basket_container .basket_info_area .price_area span {
   display: block;
   margin-left: 1rem;
   font-size: 1.5rem;
   color: #1E90FF;
+  text-shadow: 0 0 2px aquamarine;
 }
 .basket_container .button_area {
   margin-top: 0.6rem;

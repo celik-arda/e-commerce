@@ -1,7 +1,7 @@
 //  PAGE CONTENT VARIABLE FILE  //
 
 
-// --- Page Colors ---  //
+// --- (START) Page Colors ---  //
 $background_dark: #091A2F;
 $background_regular: #09253F;
 $background_light: #437DB0;
@@ -15,7 +15,7 @@ $icon_regular: #29a66a;
 
 
 
-// --- Inherited Templates --- //
+// --- (START) Inherited Templates --- //
 
 %centered_content {
     margin: 2em auto;
@@ -40,8 +40,6 @@ $icon_regular: #29a66a;
     &:hover {
         color: white;
         background-color: $button_color;
-        box-shadow: 0 0 2px #1E90FF,
-        0 0 2.5px #66B7FF;
     }
 }
 
@@ -49,7 +47,7 @@ $icon_regular: #29a66a;
     max-width: 90%;
     margin-bottom: 2rem;
     outline: 3px solid $background_dark!important;
-    transition: outline 300ms ease-out;
+    transition: outline 100ms ease-out;
         
     &:focus {
         outline: 6px solid $button_color!important;

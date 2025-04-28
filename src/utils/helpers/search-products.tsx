@@ -1,7 +1,4 @@
-import {useContext, useState} from 'react';
-import MyAllContext from "../../contextProviders/MyContextProvider";
 import { getDocs, query, Query, FirestoreError, orderBy, startAt, endAt } from 'firebase/firestore';
-import {db} from '../../../firebase';
 import { Product } from '../../models/Product'
 
 interface AllProducts {
@@ -22,9 +19,8 @@ export const searchTheProducts = (
     setListResult: (newValue: AllProducts[]) => void,
     productsRefs: any) => {
         
-    
     if (!searchingWord){
-        return "arama çubuğu boş";
+        return;
     }
 
     let productsResult: any[] = [];
@@ -59,15 +55,15 @@ export const searchTheProducts = (
             return foundProducts;
         })
         .then(allSearchResult => {
-            setListResult(allSearchResult);
 
+            setListResult(allSearchResult);
         })
     } catch{ (error: FirestoreError) => {
             if (error){
-                console.log("ürünler güncellenemedi",error.message);
+                return <h2>`products couldn't be updated (${error.message})`</h2>
             }
             else {
-                console.log("ürünler güncellenemedi : ",error);
+                return <h2>`something's wrong`</h2>;
             }
         }
     }

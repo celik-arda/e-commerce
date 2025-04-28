@@ -1,30 +1,12 @@
 @import '../../_variables';
+@import '../../mixinsResponsive';
 
 
-// .search_result_invisible{
-//     display: none;       
-//     position: absolute;
-//     // top: 12rem;
-//     outline: 7px dashed white;    
-//     background-color:white;
-// }
-// .search_result_visible {
-//     display: block;
-//     position: absolute;
-//     top: 160%;
-//     left: 0;
-//     width: 41rem;
-//     height: fit-content;
-//     padding: 1rem 1rem;
-//     z-index: 2;
-//     border-radius: 1rem;
-//     background-color: #2b2a33;
-// }
 
 .search_results_active {
     display: block;
     position: absolute;
-    top: 160%;
+    top: 100%;
     left: 0;
     width: 41rem;
     height: fit-content;
@@ -32,11 +14,39 @@
     z-index: 2;
     border-radius: 1rem;
     background-color: #2b2a33;
+
+    @include respond-to("small_laptop") {
+        width: 35rem;
+    }
+    @include respond-to("tablet_device") {
+        width: 35rem;
+    }
+    @include respond-to("smartphone") {
+        width: 320px;
+        margin: 0 auto;
+        min-height: 300px;
+        left: -50%;
+        right: -50%;
+    }
 }
+
+// If there is no result in search bar //
+// .no_result_area {
+//     display: inline;
+//     width: fit-content;
+//     color: $card_background;
+//     display: flex;
+//     place-items: center;
+
+//     .no_result_text {
+//         font-size: 1.4rem;
+//     }
+// }
 
 ul {
     width: 100%;
     padding-inline: 0px;
+    
 
 
     .result_list_item {
@@ -51,10 +61,23 @@ ul {
         overflow: hidden;
 
         div {
-            background-color: black;
+            background-color: $card_background;
             color: $button_color;
             height: 5rem;
             font-size: 1.5rem;
+
+            @include respond-to("small_laptop") {
+                font-size: 1.3rem;
+                height: 4rem;
+            }
+            @include respond-to("tablet_device") {
+                font-size: 1.5rem;
+                height: 4.8rem;
+            }
+            @include respond-to("smartphone") {
+                font-size: 1.1rem;
+                height: 3.4rem;
+            }
         }
 
         .thumb_container {
@@ -66,6 +89,10 @@ ul {
             box-sizing: border-box;
             overflow: hidden;
             background-position: center;
+
+            @include respond-to("smartphone") {
+                display: none;
+            }
             
             
             .result_thumb {
@@ -83,6 +110,24 @@ ul {
             padding-left:1.6rem ;
             flex: 8;
             line-height: 4.8rem;
+        }
+
+        .result_title,
+        .result_price {
+            @include respond-to("small_laptop") {
+                line-height: 4rem;
+            }
+            @include respond-to("smartphone") {
+                line-height: 3.4rem;
+            }
+            
+            a {
+                color: $button_color;
+
+                @include respond-to("smartphone") {
+                font-weight: 600;
+            }
+            }
         }
     }
 }

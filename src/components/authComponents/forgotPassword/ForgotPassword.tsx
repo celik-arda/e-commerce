@@ -36,12 +36,14 @@ const ForgotPassword = () => {
                 <div className={style.info_area}>
                     <p>{infoMessageforReset}</p>
                 </div>
+
                 <input 
                 value={mailToReset}
                 type='mail' 
                 onChange={e => setMailToReset(e.target.value)} 
                 placeholder='write your email'
                 />
+                
                 <button 
                 onClick={handleMailToResetPass}>send reset link</button>
             </form>

@@ -1,0 +1,25 @@
+{
+    "liveSassCompile.settings.autoprefix": [
+
+    ],
+    
+    // ---------     LIVE SASS COMPILER CONFIG (EKLENEN) --------
+    
+    "liveSassCompile.settings.formats": [
+        {
+          "format": "expanded",
+          "extensionName": ".css",
+          "savePath": ""
+        }
+      ],
+      "liveSassCompile.settings.generateMap": true,
+      "liveSassCompile.settings.autoprefix": [
+
+        "> 1%",
+        "last 2 versions"
+      ],
+      "javascript.updateImportsOnFileMove.enabled": "always",
+      "window.menuBarVisibility": "compact",
+      "liveSassCompile.settings.watchOnLaunch": true,
+      "liveSassCompile.settings.showOutputWindow": false,
+}

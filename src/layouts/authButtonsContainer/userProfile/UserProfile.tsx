@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import MyAllContext from '../../../contextProviders/MyContextProvider.tsx';
 import { getDoc, doc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../../firebase.tsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const UserProfile = () => {
     

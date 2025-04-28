@@ -1,5 +1,4 @@
 import style from './Header.module.css';
-import { NavLink } from 'react-router-dom';
 import AuthButtonContainer from '../../layouts/authButtonsContainer/AuthButtonContainer';
 
 

@@ -1,0 +1,60 @@
+// // -------  NEW FIREFOX CONSOLE CONFIG  --------- //
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "vite:dev",
+            "type": "npm",
+            "script": "dev",
+            "isBackground": true,
+            "problemMatcher": {
+                "base": "$tsc-watch",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*Vite server starting.*",
+                    "endsPattern": ".*Local:.*"
+                }
+            }
+        }
+    ]
+}
+
+
+// {
+
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "vite:dev",
+//             "type": "npm",
+//             "script": "dev",
+//             "isBackground": true,
+//             "problemMatcher": {
+//                 "base": "$tsc-watch",
+//                 "background": {
+//                     "activeOnStart": true,
+//                     "beginsPattern": ".*Vite server starting.*",
+//                     "endsPattern": ".*Local:.*"
+//                 }
+//             }
+//         }
+//     ]
+// }
+
+// ---------  DEFAULT CONFIG   -------------- //
+// {
+// 	"version": "2.0.0",
+// 	"tasks": [
+//         {
+//             "type": "npm",
+//             "script": "dev",
+//             "problemMatcher": [],
+//             "label": "npm: dev",
+//             "detail": "vite",
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             }
+//         }
+//     ]
+// }
