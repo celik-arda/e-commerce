@@ -1,10 +1,10 @@
-import {Navigate, NavLink} from 'react-router-dom'
+import style from './Basket.module.scss';
+import {NavLink} from 'react-router-dom'
 import {useEffect, useState, useContext} from 'react';
 import {onAuthStateChanged} from 'firebase/auth'
 // import {auth} from '../../../firebase.tsx'
 import MyAllContext from '../../contextProviders/MyContextProvider.tsx';
 import { AllProducts } from '../../models/Product.tsx';
-import style from './Basket.module.css'
 
 
 const Basket = () => {
@@ -100,7 +100,7 @@ const Basket = () => {
                             <h4>piece of product in your basket</h4>
                         </div>
                         <div className={style.price_area}>
-                            <h4>Total Price : </h4>
+                            <h4>Total Price:</h4>
                             <span>{totalBasketPrice}</span>
                             <span>£</span>
                         </div>
