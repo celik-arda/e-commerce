@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "reinstall": "rm -rf node_modules && yarn install",
+    "postinstall": "vite build || echo 'Skipping vite build on install'"
+
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
