@@ -1,6 +1,6 @@
 import '../../App.css';
 import { useState } from 'react';
-import style from './Navbar.module.css';
+import style from './Navbar.module.scss';
 import { NavLink, Routes, Route } from 'react-router-dom'
 import NavbarDropdownMenu from '../navbarDropdownMenu/NavbarDropdownMenu.tsx';
 import AuthButtonContainer from '../authButtonsContainer/AuthButtonContainer';
@@ -20,8 +20,10 @@ const Navbar = () => {
 
             {/* --- (start) Regular Screen's Header --- */}
             <div className={style.site_name}>
-                <span> O </span>
-                <h1>E-Commerce</h1>
+                <div className={style.website_icon}>
+                    <img src='/e_commerce_icon_.png' alt="website_icon" />
+                </div>
+                <h1>Happy Electronics</h1>
             </div>
             <div className={style.nav_container}>
                 <nav>
