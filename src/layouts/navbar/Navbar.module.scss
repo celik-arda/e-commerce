@@ -1,5 +1,5 @@
-@import '../../variables.scss';
-@import '../../mixinsResponsive.scss';
+@use '../../variables.scss' as *;
+@use '../../mixinsResponsive.scss' as *;
 
 .header_menu {
     display: flex;
@@ -16,9 +16,15 @@
             display: none;
         }
         
-        span {
+        .website_icon {
             display: flex;
             align-items: center;
+            width: 3rem;
+
+
+            img {
+                width: 100%;
+            }
         }
 
         h1 {
