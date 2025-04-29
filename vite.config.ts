@@ -17,12 +17,19 @@ export default defineConfig({
     },
   },
 
+  // for more stability of hot-reload in ubuntu-wsl2
   server: {
-    host: '127.0.0.1',
+    host: '0.0.0.0',
     port: 4444,
     watch: {
-      usePolling: isWindows, // Enable polling only on Windows
-      interval: isWindows ? 300 : 100, // Slightly slower polling interval on Windows
+      usePolling: true,
+      interval: 300,
+      binaryInterval: 500,
+      awaitWriteFinish: {
+        stabilityThreshold: 100,
+        pollInterval: 100,
+      },
     },
   },
+
 });
